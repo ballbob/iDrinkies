@@ -130,7 +130,7 @@ db.pubs.insert([
   {
     name: "Lebowskis",
     phone_number: "0131 446 1779",
-    address: "18 Morrison St, Edinburgh EH3 8BJ"
+    address: "18 Morrison St, Edinburgh EH3 8BJ",
     latlng: [55.9476308,-3.2061632],
     opening_hours: "11:00 - 01:00",
     cc_ranking: 6,
@@ -141,7 +141,7 @@ db.pubs.insert([
   {
     name: "Henry's Cellar Bar",
     phone_number: "0131 629 2992",
-    address: "16A Morrison Street, Edinburgh EH3 8BJ"
+    address: "16A Morrison Street, Edinburgh EH3 8BJ",
     latlng: [55.9476308,-3.2061632],
     opening_hours: "17:00 - 01:00",
     cc_ranking: 5,
