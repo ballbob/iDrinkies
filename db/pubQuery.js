@@ -18,12 +18,12 @@ PubQuery.prototype = {
     })
   },
 
-  update: function(pubId,field,newData,callback){
+  update: function(pubId,field,callback){
     MongoClient.connect(this.url,function(err,db){
       if(db){
         var collection = db.collection('pubs')
 
-        collection.updateOne({_id: ObjectID(pubObjectId)}, {$set:  {field: newData}})
+        collection.updateOne({_id: ObjectID(pubObjectId)}, {$set:  {field}})
 
         collection.find().toArray(function(err,documents){
           callback(documents)
