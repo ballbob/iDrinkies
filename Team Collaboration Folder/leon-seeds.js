@@ -1,7 +1,7 @@
 {
   name: "The Hanging Bat",
   address: "133 Lothian RD, Edinburgh EH3 9AB",
-  latlng: 55.9463476,-3.2063564,
+  latlng: [55.9463476,-3.2063564],
   opening_hours: {
     monday: "12pm–12am",
     tuesday: "12pm–12am",
@@ -20,7 +20,7 @@
 {
   name: "Blue Blazer",
   address: "2 Spittal St, Edinburgh EH3 9DX",
-  latlng: 55.946089,-3.2030417,
+  latlng: [55.946089,-3.2030417],
   opening_hours: {
     monday: "12pm–12am",
     tuesday: "12pm–12am",
@@ -39,7 +39,7 @@
 {
   name: "The Chanter",
   address: "30-32 Bread St, Edinburgh EH3 9AF",
-  latlng: 55.946089,-3.2030417,
+  latlng: [55.946089,-3.2030417],
   opening_hours: {
     monday: "11am–1am",
     tuesday: "11am–1am",
