@@ -11,7 +11,7 @@
   review: "It's pretty much what you would expect - fine.",
   special_events: "Sunday to Thursday: 5 o'clock-tails - limited range of cocktails for £4.95 from 5pm."
   img: "http://img.static-bookatable.com/498/332/e584b865dee0353198f2752735fab8a4.jpg?404=bat2/404-restaurant.jpgmode=crop"
-}
+},
 
 {
   name: "Lebowskis",
@@ -22,7 +22,7 @@
   cc_ranking: 6,
   review: "Nice burgers!",
   img: "http://farm7.static.flickr.com/6209/6128315560_f2fd0abf4a.jpg"
-}
+},
 
 {
   name: "Henry's Cellar Bar",
@@ -34,4 +34,4 @@
   review: "Good for live music, less for general drinkies - proceed with caution.",
   special_events: ["Live music every night"]
   img: "https://files.list.co.uk/images/h/henrys-cellar-bar-lst185453.jpg"
-}
+},
