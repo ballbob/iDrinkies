@@ -20,7 +20,7 @@ MapView.prototype = {
     };
 
   }
-
+  
 }
 
 module.exports = MapView;
