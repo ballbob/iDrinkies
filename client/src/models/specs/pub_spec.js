@@ -8,7 +8,8 @@ describe('Pub tests: ', function(){
   beforeEach(function(){
     pub = new Pub({
       name: 'Happy Fun Pub', 
-      phoneNo:'0131 555 555'
+      phoneNo:'0131 555 555',
+      address: '13 Castle Terrace'
     })
   })
 
@@ -20,7 +21,9 @@ describe('Pub tests: ', function(){
     assert.strictEqual('0131 555 555', pub.phoneNo)
   })
 
-  it('has an address')
+  it('has an address', function(){
+    assert.strictEqual('13 Castle Terrace', pub.address)
+  })
 
 
 
