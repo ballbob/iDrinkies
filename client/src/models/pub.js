@@ -7,6 +7,7 @@ var Pub = function(params){
   this.foodServingTimes = params.foodServingTimes,
   this.CCRanking = params.CCRanking,
   this.reviews = []
+  this.specialEvents = []
 }
 
 Pub.prototype = {

@@ -62,5 +62,9 @@ describe('Pub tests: ', function(){
     assert.strictEqual(1, pub.reviews.length)
   })
 
+  it('starts with empty array of events', function(){
+    assert.strictEqual(0, pub.specialEvents.length)
+  })
+
 
 })
