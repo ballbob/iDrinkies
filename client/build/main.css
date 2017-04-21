@@ -1,15 +1,16 @@
+body {
+  background-color: #474747;
+}
+
 a {
   color: yellow;
   font-family: sans-serif;
   font-size: 1.25em;
 }
 
-body {
-  background-color: #474747;
-}
-
 section {
-    padding: 20px;
+    padding: 10px;
+    max-width: 480px;
 }
 
 #pub-list {
@@ -21,6 +22,9 @@ section {
 #map {
   width: 500px;
   height: 500px;
+}
+
+#search-box {
+  border: 5px;
   border-color: black;
-  border-style: solid;
 }
