@@ -8,13 +8,14 @@ MapView.prototype = {
 
   initialize: function () {
 
-    var center = mainMap.geoLocate();
     var mapSection = document.getElementById('map');
+    var center = { lat: 55.9533 , lng: -3.1883 };
+
     var nearMeButton = document.querySelector("#near-me-button");
 
-    var mainMap = new MapWrapper(mapSection, center, 10);
-
+    var mainMap = new MapWrapper( mapSection, center, 10 );
     mainMap.addMarker(center);
+    mainMap.addClickEvent();
 
     var findlocation = function () {
       mainMap.geoLocate();
