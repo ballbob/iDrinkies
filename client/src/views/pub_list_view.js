@@ -19,11 +19,27 @@ PubListView.prototype = {
       // food_serving_hours
       // pubDiv.appendChild(pubFoodHrs)
 
-      var pubReview = document.createElement('p')
-      pubReview.innerText = "Review: " + pubs[i].review
-      pubDiv.appendChild(pubReview)
+      // var pubReview = document.createElement('p')
+      // pubReview.innerText = "Review: " + pubs[i].review
+      // pubDiv.appendChild(pubReview)
+      this.createReviewList(pubDiv, pubs[i])
 
       this.listElement.appendChild(pubDiv)
+    }
+  },
+
+  createReviewList: function(div, pub){
+    if (pub.reviews.length !== 0){
+      var reviewSectionTitle = document.createElement('p')
+      reviewSectionTitle.innerText = 'Reviews:'
+      div.appendChild(reviewSectionTitle)
+      var reviewList = document.createElement('ul')
+      for (var review of pub.reviews){
+        var li = document.createElement('li')
+        li.innerText = review
+        reviewList.appendChild(li)
+      }
+      div.appendChild(reviewList)
     }
   },
 
