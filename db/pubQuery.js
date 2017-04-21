@@ -1,5 +1,5 @@
 var MongoClient = require('mongodb').MongoClient
-var ObjectId = require('mongodb').ObjectID
+var ObjectID = require('mongodb').ObjectID
 
 var PubQuery = function(url){
   this.url = url
@@ -18,12 +18,13 @@ PubQuery.prototype = {
     })
   },
 
-  update: function(pubId,field,callback){
+  update: function(pubID,newInfo,callback){
     MongoClient.connect(this.url,function(err,db){
       if(db){
+      console.log(newInfo)
         var collection = db.collection('pubs')
 
-        collection.updateOne({_id: ObjectID(pubObjectId)}, {$set:  {field}})
+        collection.updateOne({_id: ObjectID(pubID)}, {$set: {review: newInfo} })
 
         collection.find().toArray(function(err,documents){
           callback(documents)

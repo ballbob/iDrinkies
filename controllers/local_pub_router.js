@@ -2,6 +2,7 @@ var express = require('express')
 var pubRouter = express.Router()
 var PubQuery = require('../db/PubQuery')
 
+
 pubQuery = new PubQuery('mongodb://localhost:27017/idrinkies')
 
 //pubs index
@@ -11,9 +12,9 @@ pubRouter.get('/', function(req,res){
   })
 })
 
-//update a pub's
+//update a pub
 pubRouter.put('/:id',function(req,res){
-  pubQuery.update( req.params.id, req.body , ,function(documents){
+  pubQuery.update( req.params.id, req.body.review,function(documents){
     res.json(documents)
   })
 })
