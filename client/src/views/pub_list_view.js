@@ -7,10 +7,6 @@ PubListView.prototype = {
     for (i=0; i<pubs.length; i++){
       var pubDiv = document.createElement('div')
 
-      // var pubImg = document.createElement('a')
-      // pubImg.href = pubs[i].img
-      // pubImg.innerText = "Have a look at " + pubs[i].name
-      // pubDiv.appendChild(pubImg)
       this.createImgLink(pubDiv, pubs[i])
 
       var pubName = document.createElement('p')
