@@ -1,3 +1,6 @@
+var PubGet = require('./models/pub_getter.js')
+var PubListView = require('./models/pub_list_view.js')
+
 var app = function(){
   //start an instance of your API-getting object
   var pubGetter = new PubGet("http://localhost:3000/api/pubs")

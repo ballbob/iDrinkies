@@ -6,7 +6,7 @@ PubListView.prototype = {
   render: function(pub){
     var pubDiv = document.createElement('div')
 
-    var pubName = document.createElemtn('p')
+    var pubName = document.createElement('p')
     pubName.innerText = pub.name
     pubDiv.appendChild(pubName)
 
