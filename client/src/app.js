@@ -1,5 +1,5 @@
 var PubGet = require('./models/pub_getter.js')
-var PubListView = require('./models/pub_list_view.js')
+var PubListView = require('./views/pub_list_view.js')
 
 var app = function(){
   //start an instance of your API-getting object
