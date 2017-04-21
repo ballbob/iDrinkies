@@ -7,15 +7,13 @@ var MapView = function () {
 MapView.prototype = {
 
   initialize: function () {
-
+    
     var mapSection = document.getElementById('map');
-    var center = { lat: 55.9533 , lng: -3.1883 };
-
+    var center = { lat: 55.9533 , lng: -3.1833 }
     var nearMeButton = document.querySelector("#near-me-button");
-
-    var mainMap = new MapWrapper( mapSection, center, 10 );
+    var mainMap = new MapWrapper( mapSection, center, 16 );
     mainMap.addMarker(center);
-    mainMap.addClickEvent();
+    mainMap.geolocate();
 
     var findlocation = function () {
       mainMap.geoLocate();
