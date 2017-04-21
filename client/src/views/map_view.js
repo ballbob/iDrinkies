@@ -7,9 +7,9 @@ var MapView = function () {
 MapView.prototype = {
 
   initialize: function () {
-    
+
     var mapSection = document.getElementById('map');
-    var center = { lat: 55.9533 , lng: -3.1833 }
+    var center = { lat: 0 , lng: 0 }
     var nearMeButton = document.querySelector("#near-me-button");
     var mainMap = new MapWrapper( mapSection, center, 16 );
     mainMap.addMarker(center);
