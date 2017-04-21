@@ -4,7 +4,7 @@ var MapView = function ( ) {
 
 }
 
-var MapView.prototype = {
+MapView.prototype = {
 
   initialize: function () {
 
