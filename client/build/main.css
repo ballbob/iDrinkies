@@ -1,3 +1,23 @@
+a {
+  color: yellow;
+  font-family: sans-serif;
+  font-size: 1.25em;
+}
+
+body {
+  background-color: #474747;
+}
+
+section {
+    padding: 20px;
+}
+
+#pub-list {
+  color: white;
+  font-family: sans-serif;
+  font-size: 1em;
+}
+
 #map {
   width: 500px;
   height: 500px;
