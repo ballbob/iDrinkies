@@ -26,7 +26,7 @@ MapWrapper.prototype = {
       this.addMarker( crds );
     }.bind(this));
   }
-  }
+}
 
 }
 
