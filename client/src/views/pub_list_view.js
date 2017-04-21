@@ -11,7 +11,7 @@ PubListView.prototype = {
       this.createNameParagraph(pubDiv, pubs[i])
       this.createAddressParagraph(pubDiv, pubs[i])
       this.createOpeningHoursList(pubDiv, pubs[i])
-
+      this.createReviewList(pubDiv, pubs[i])
       
 
       // var pubFoodHrs = document.createElement('p')
@@ -19,10 +19,6 @@ PubListView.prototype = {
       // food_serving_hours
       // pubDiv.appendChild(pubFoodHrs)
 
-      // var pubReview = document.createElement('p')
-      // pubReview.innerText = "Review: " + pubs[i].review
-      // pubDiv.appendChild(pubReview)
-      this.createReviewList(pubDiv, pubs[i])
 
       this.listElement.appendChild(pubDiv)
     }

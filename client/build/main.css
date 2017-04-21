@@ -17,11 +17,15 @@ body {
 #map-and-details{
   display: flex;
   flex-direction: row;
+  flex-wrap: none;
   margin: 10px;
+  justify-content: center;
+  width: 100%;
 }
 
 #pub-list{
   margin-left: 20px;
+  width: 50%;
 }
 
 
