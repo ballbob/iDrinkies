@@ -11,6 +11,10 @@ PubListView.prototype = {
       pubName.innerText = pubs[i].name
       pubDiv.appendChild(pubName)
 
+      var pubAddress = document.createElement('p')
+      pubAddress.innerText = pubs[i].address
+      pubDiv.appendChild(pubAddress)
+
       this.listElement.appendChild(pubDiv)
     }
   }
