@@ -10,7 +10,8 @@ describe('Pub tests: ', function(){
       name: 'Happy Fun Pub', 
       phoneNo:'0131 555 555',
       address: '13 Castle Terrace',
-      latlng: [555, 444]
+      latlng: [555, 444],
+      openingHours: '10:00 - 12:00'
     })
   })
 
@@ -36,6 +37,10 @@ describe('Pub tests: ', function(){
 
   it('stores lng in index 1 of latlng', function(){
     assert.strictEqual(444, pub.latlng[1])
+  })
+
+  it('has opening hours', function(){
+    assert.strictEqual('10:00 - 12:00', pub.openingHours)
   })
 
 
