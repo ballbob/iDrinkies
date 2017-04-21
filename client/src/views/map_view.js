@@ -8,7 +8,7 @@ MapView.prototype = {
 
   initialize: function () {
 
-    var center = mainMap.geoLocate();
+    var center = { lat: 55.9533 , lng -3.1883 };
     var mapSection = document.getElementById('map');
     var nearMeButton = document.querySelector("#near-me-button");
 
