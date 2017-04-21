@@ -20,11 +20,11 @@ MapWrapper.prototype = {
       navigator.geolocation.getCurrentPosition(function ( position ) {
         var crds = {
           lat: position.coords.latitude,
-          lng: position.coords.longtitude
+          lng: position.coords.longitude
         };
       var center = {lat: position.coords.latitude , lng: position.coords.longtitude};
       this.googlemap.setCenter( crds );
-      this.addMarker( center );
+      this.addMarker( crds );
     }.bind(this));
   }
   }
