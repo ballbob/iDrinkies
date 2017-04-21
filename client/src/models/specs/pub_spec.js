@@ -9,7 +9,8 @@ describe('Pub tests: ', function(){
     pub = new Pub({
       name: 'Happy Fun Pub', 
       phoneNo:'0131 555 555',
-      address: '13 Castle Terrace'
+      address: '13 Castle Terrace',
+      latlng: [555, 444]
     })
   })
 
@@ -23,6 +24,18 @@ describe('Pub tests: ', function(){
 
   it('has an address', function(){
     assert.strictEqual('13 Castle Terrace', pub.address)
+  })
+
+  it('has latlng coords', function(){
+    assert.strictEqual(2, pub.latlng.length)
+  })
+
+  it('stores lat in index 0 of latlng', function(){
+    assert.strictEqual(555, pub.latlng[0])
+  })
+
+  it('stores lng in index 1 of latlng', function(){
+    assert.strictEqual(444, pub.latlng[1])
   })
 
 
