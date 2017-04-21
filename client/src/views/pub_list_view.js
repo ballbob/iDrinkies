@@ -8,18 +8,11 @@ PubListView.prototype = {
       var pubDiv = document.createElement('div')
 
       this.createImgLink(pubDiv, pubs[i])
+      this.createNameParagraph(pubDiv, pubs[i])
+      this.createAddressParagraph(pubDiv, pubs[i])
+      this.createOpeningHoursList(pubDiv, pubs[i])
 
-      var pubName = document.createElement('p')
-      pubName.innerText = "Pub: " + pubs[i].name
-      pubDiv.appendChild(pubName)
-
-      var pubAddress = document.createElement('p')
-      pubAddress.innerText = "Address: " +pubs[i].address
-      pubDiv.appendChild(pubAddress)
-
-      var pubOpeningHrs = document.createElement('p')
-      pubOpeningHrs.innerText = "Opening hours: " + pubs[i].opening_hours
-      pubDiv.appendChild(pubOpeningHrs)
+      
 
       // var pubFoodHrs = document.createElement('p')
       // pubFoodHrs.innerText = "Food served from: " + pubs[i]
@@ -41,7 +34,50 @@ PubListView.prototype = {
       pubImg.innerText = "Have a look at " + pub.name
       div.appendChild(pubImg)
     }
-    
+  },
+
+  createNameParagraph: function(div, pub){
+    var pubName = document.createElement('p')
+    pubName.innerText = "Pub: " + pub.name
+    div.appendChild(pubName)
+  },
+
+  createAddressParagraph: function(div, pub){
+    if (pub.address){
+      var pubAddress = document.createElement('p')
+      pubAddress.innerText = "Address: " +pub.address
+      div.appendChild(pubAddress)
+    }
+  },
+
+  createOpeningHoursList: function(div, pub){
+    if (pub.opening_hours){
+      var pubOpeningHrs = document.createElement('p')
+      pubOpeningHrs.innerText = "Opening hours:"
+      var openingHoursList = document.createElement('ul')
+      this.appendDailyOpeningHours(openingHoursList, pub.opening_hours)
+      div.appendChild(pubOpeningHrs)
+      div.appendChild(openingHoursList)
+    }
+  },
+
+  appendDailyOpeningHours: function(list, openingHours){
+    for (var day in openingHours){
+      var li = document.createElement('li')
+      var dayString = this.titleize(day)
+      li.innerText = dayString + ": " + openingHours[day]
+      list.appendChild(li)
+    }
+  },
+
+  titleize: function(string){
+    var arrayOfChars = string.split("")
+    arrayOfChars[0] = arrayOfChars[0].toUpperCase()
+    var newString = ""
+    for (var char of arrayOfChars){
+      newString += char
+    }
+    return newString
   }
 }
 
