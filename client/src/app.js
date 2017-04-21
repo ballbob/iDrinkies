@@ -1,5 +1,5 @@
 var PubGet = require('./models/pub_getter.js')
-var PubListView = require('./models/pub_list_view.js')
+var PubListView = require('./views/pub_list_view.js')
 var MapWrapper = require("./models/map_wrapper.js")
 var MapView = require("./views/map_view.js")
 
