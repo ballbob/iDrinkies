@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "webpack": "^2.2.0-rc.0",
-    "mocha": "^3.2.0"
+    "mocha": "^3.2.0",
+    "webpack": "^2.2.0-rc.0"
   }
 }
