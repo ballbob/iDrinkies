@@ -12,7 +12,8 @@ describe('Pub tests: ', function(){
       address: '13 Castle Terrace',
       latlng: [555, 444],
       openingHours: '10:00 - 12:00',
-      foodServingTimes: '10:00 - 12:00'
+      foodServingTimes: '10:00 - 12:00',
+      CCRanking: 5
     })
   })
 
@@ -46,6 +47,10 @@ describe('Pub tests: ', function(){
 
   it('has food service times', function(){
     assert.strictEqual('10:00 - 12:00', pub.foodServingTimes)
+  })
+
+  it('has a CC ranking', function(){
+    assert.strictEqual(5, pub.CCRanking)
   })
 
 

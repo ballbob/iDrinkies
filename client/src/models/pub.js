@@ -5,6 +5,7 @@ var Pub = function(params){
   this.latlng = params.latlng,
   this.openingHours = params.openingHours
   this.foodServingTimes = params.foodServingTimes
+  this.CCRanking = params.CCRanking
 }
 
 
