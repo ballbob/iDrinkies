@@ -6,7 +6,7 @@ router.use('/api/pubs', require('./local_pub_router'))
 
 //index
 router.get('/',function(req,res){
-  console.log("No main page yet.")
+  res.sendFile(path.join(__dirname + '/../client/index.html'))
 })
 
 module.exports = router
