@@ -21,10 +21,10 @@ PubQuery.prototype = {
   update: function(pubID,newInfo,callback){
     MongoClient.connect(this.url,function(err,db){
       if(db){
-    
+      console.log(newInfo)
         var collection = db.collection('pubs')
 
-        collection.updateOne({_id: ObjectID(pubID)}, {$set: {newInfo} })
+        collection.updateOne({_id: ObjectID(pubID)}, {$set: {review: newInfo} })
 
         collection.find().toArray(function(err,documents){
           callback(documents)

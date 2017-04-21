@@ -14,7 +14,7 @@ pubRouter.get('/', function(req,res){
 
 //update a pub
 pubRouter.put('/:id',function(req,res){
-  pubQuery.update( req.params.id, req.body,function(documents){
+  pubQuery.update( req.params.id, req.body.review,function(documents){
     res.json(documents)
   })
 })
