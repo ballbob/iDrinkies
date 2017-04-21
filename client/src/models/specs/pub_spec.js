@@ -57,5 +57,10 @@ describe('Pub tests: ', function(){
     assert.strictEqual(0, pub.reviews.length)
   })
 
+  it('can add a review', function(){
+    pub.addReview('it was OK')
+    assert.strictEqual(1, pub.reviews.length)
+  })
+
 
 })

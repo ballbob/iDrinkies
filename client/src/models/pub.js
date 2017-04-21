@@ -9,5 +9,11 @@ var Pub = function(params){
   this.reviews = []
 }
 
+Pub.prototype = {
+  addReview: function(review){
+    this.reviews.push(review)
+  }
+}
+
 
 module.exports = Pub
