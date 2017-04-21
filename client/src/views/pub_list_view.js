@@ -7,10 +7,11 @@ PubListView.prototype = {
     for (i=0; i<pubs.length; i++){
       var pubDiv = document.createElement('div')
 
-      var pubImg = document.createElement('a')
-      pubImg.href = pubs[i].img
-      pubImg.innerText = "Have a look at " + pubs[i].name
-      pubDiv.appendChild(pubImg)
+      // var pubImg = document.createElement('a')
+      // pubImg.href = pubs[i].img
+      // pubImg.innerText = "Have a look at " + pubs[i].name
+      // pubDiv.appendChild(pubImg)
+      this.createImgLink(pubDiv, pubs[i])
 
       var pubName = document.createElement('p')
       pubName.innerText = "Pub: " + pubs[i].name
@@ -35,6 +36,16 @@ PubListView.prototype = {
 
       this.listElement.appendChild(pubDiv)
     }
+  },
+
+  createImgLink: function(div, pub){
+    if (pub.img){
+      var pubImg = document.createElement('a')
+      pubImg.href = pub.img
+      pubImg.innerText = "Have a look at " + pub.name
+      div.appendChild(pubImg)
+    }
+    
   }
 }
 
