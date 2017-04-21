@@ -11,7 +11,8 @@ describe('Pub tests: ', function(){
       phoneNo:'0131 555 555',
       address: '13 Castle Terrace',
       latlng: [555, 444],
-      openingHours: '10:00 - 12:00'
+      openingHours: '10:00 - 12:00',
+      foodServingTimes: '10:00 - 12:00'
     })
   })
 
@@ -43,7 +44,9 @@ describe('Pub tests: ', function(){
     assert.strictEqual('10:00 - 12:00', pub.openingHours)
   })
 
-
+  it('has food service times', function(){
+    assert.strictEqual('10:00 - 12:00', pub.foodServingTimes)
+  })
 
 
 })
