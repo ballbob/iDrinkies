@@ -1,21 +1,20 @@
 <!DOCTYPE html>
+
 <html>
-<head>
-  <title>iDrinkies map: where's the nearest booze?</title>
-  <script src="bundle.js"></script>
-</head>
-<body>
 
+  <head>
+    <title>iDrinkies map: where's the nearest booze?</title>
+    <link rel="stylesheet" href="/main.css">
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="bundle.js"></script>
+  </head>
 
-<button id="near-me-button">Find booze nearby!</button>
+  <body>
+    <button id="near-me-button">Find booze nearby!</button>
+    <input id="search-box"/>
+    <button id="submit-button">Search an area</button>
+    <section id="map"></section>
+    <section id="pub-list"></section>
+  </body>
 
-<input id="search-box"/>
-
-<button id="submit-button">Search an area</button>
-
-<section id="map"></section>
-
-<section id="pub-list"></section>
-
-</body>
 </html>
