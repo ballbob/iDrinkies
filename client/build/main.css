@@ -4,3 +4,24 @@
   border-color: black;
   border-style: solid;
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+#location-selectors{
+  flex-direction: row;
+}
+
+#map-and-details{
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
+
+#pub-list{
+  margin-left: 20px;
+}
+
+
