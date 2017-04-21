@@ -14,6 +14,7 @@ MapView.prototype = {
     var mainMap = new MapWrapper( mapSection, center, 16 );
     mainMap.addMarker(center);
     mainMap.geolocate();
+    console.log('brr')
 
     var findlocation = function () {
       mainMap.geoLocate();

@@ -22,7 +22,6 @@ MapWrapper.prototype = {
           lat: position.coords.latitude,
           lng: position.coords.longitude
         };
-      var center = {lat: position.coords.latitude , lng: position.coords.longtitude};
       this.googlemap.setCenter( crds );
       this.addMarker( crds );
     }.bind(this));
