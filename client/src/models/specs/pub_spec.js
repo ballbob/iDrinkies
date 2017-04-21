@@ -53,5 +53,9 @@ describe('Pub tests: ', function(){
     assert.strictEqual(5, pub.CCRanking)
   })
 
+  it('starts with empty array of reviews', function(){
+    assert.strictEqual(0, pub.reviews.length)
+  })
+
 
 })
