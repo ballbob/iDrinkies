@@ -1,6 +1,6 @@
-var Pub = function(name, phoneNo){
-  this.name = name,
-  this.phoneNo = phoneNo
+var Pub = function(params){
+  this.name = params.name,
+  this.phoneNo = params.phoneNo
 }
 
 
