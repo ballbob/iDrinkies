@@ -3,14 +3,16 @@ var PubListView = function(listElement){
 }
 
 PubListView.prototype = {
-  render: function(pub){
-    var pubDiv = document.createElement('div')
+  render: function(pubs){
+    for (i=0; i<pubs.length; i++){
+      var pubDiv = document.createElement('div')
 
-    var pubName = document.createElement('p')
-    pubName.innerText = pub.name
-    pubDiv.appendChild(pubName)
+      var pubName = document.createElement('p')
+      pubName.innerText = pubs[i].name
+      pubDiv.appendChild(pubName)
 
-    this.listElement.appendChild(pubDiv)
+      this.listElement.appendChild(pubDiv)
+    }
   }
 }
 
