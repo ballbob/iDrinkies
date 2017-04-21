@@ -13,7 +13,8 @@ describe('Pub tests: ', function(){
       latlng: [555, 444],
       openingHours: '10:00 - 12:00',
       foodServingTimes: '10:00 - 12:00',
-      CCRanking: 5
+      CCRanking: 5,
+      img: 'imgurl'
     })
   })
 
@@ -69,6 +70,10 @@ describe('Pub tests: ', function(){
   it('can add a special event', function(){
     pub.addSpecialEvent('taco Tuesdays - yum')
     assert.strictEqual(1, pub.specialEvents.length)
+  })
+
+  it('has an image url', function(){
+    assert.strictEqual('imgurl', pub.img)
   })
 
 

@@ -8,6 +8,7 @@ var Pub = function(params){
   this.CCRanking = params.CCRanking,
   this.reviews = []
   this.specialEvents = []
+  this.img = params.img
 }
 
 Pub.prototype = {
