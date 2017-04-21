@@ -1,5 +1,7 @@
 var PubGet = require('./models/pub_getter.js')
 var PubListView = require('./models/pub_list_view.js')
+var MapWrapper = require("./models/map_wrapper.js")
+var MapView = require("./views/map_view.js")
 
 var app = function(){
   //start an instance of your API-getting object
@@ -9,10 +11,13 @@ var app = function(){
   var pubListElement = document.querySelector('#pub-list')
   var pubLister = new PubListView(pubListElement)
 
-  //get your data and render it 
+  //get your data and render it
   pubGetter.getData(function(pubs){
     pubLister.render(pubs)
   })
+
+  var mapView = new MapView()
+  mapView.initialize()
 
 }
 

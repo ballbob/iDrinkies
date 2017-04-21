@@ -11,7 +11,7 @@ MapWrapper.prototype = {
       animation: google.maps.Animation.DROP
     });
     return marker;
-  }
+  },
 
   geolocate: function () {
     navigator.geolocation.getCurrentPosition(function ( position ) {
@@ -22,3 +22,5 @@ MapWrapper.prototype = {
   }
 
 }
+
+module.exports = MapWrapper;
