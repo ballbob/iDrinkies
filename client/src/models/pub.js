@@ -13,6 +13,10 @@ var Pub = function(params){
 Pub.prototype = {
   addReview: function(review){
     this.reviews.push(review)
+  },
+
+  addSpecialEvent: function(eventInfo){
+    this.specialEvents.push(eventInfo)
   }
 }
 

@@ -66,5 +66,10 @@ describe('Pub tests: ', function(){
     assert.strictEqual(0, pub.specialEvents.length)
   })
 
+  it('can add a special event', function(){
+    pub.addSpecialEvent('taco Tuesdays - yum')
+    assert.strictEqual(1, pub.specialEvents.length)
+  })
+
 
 })
