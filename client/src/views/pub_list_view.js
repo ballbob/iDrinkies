@@ -62,11 +62,14 @@ PubListView.prototype = {
     dropDownArrow.style.backgroundColor = 'white'
     dropDownArrow.style.height = '25px'
     dropDownArrow.addEventListener('click', function(){
-      this.createImgLink(div, pub)
-      this.createAddressParagraph(div, pub)
-      this.createOpeningHoursList(div, pub)
-      this.createReviewList(div, pub)
-    }.bind(this))
+      if (div.childNodes.length <= 2){
+          this.createImgLink(div, pub)
+          this.createAddressParagraph(div, pub)
+          this.createOpeningHoursList(div, pub)
+          this.createReviewList(div, pub)
+        }
+      }.bind(this))
+      
     headingDiv.appendChild(pubName)
     headingDiv.appendChild(dropDownArrow)
 
