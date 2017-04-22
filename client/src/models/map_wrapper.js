@@ -41,10 +41,13 @@ MapWrapper.prototype = {
     var userInput = searchTerm
     var geocoder = new google.maps.Geocoder()
 
+    //start up geocoder, feeding it the search term
     geocoder.geocode({address: searchTerm}, function(results,status){
-      if(status === 200){
+      if(status == google.maps.GeocoderStatus.OK){
+        //reset the center of the map to the first search result
         this.googlemap.setCenter(results[0].geometry.location)
       }else{
+        console.log(google.maps.GeocoderStatus)
         console.log('Search term produced no results')
       }
     })
