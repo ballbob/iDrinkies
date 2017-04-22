@@ -4,7 +4,7 @@ var PubListView = function(listElement){
 
 PubListView.prototype = {
   render: function(pubs){
-    for (i=0; i<pubs.length; i++){
+    for (var i=0; i<pubs.length; i++){
       var pubDiv = document.createElement('div')
 
       
@@ -67,6 +67,8 @@ PubListView.prototype = {
           this.createAddressParagraph(div, pub)
           this.createOpeningHoursList(div, pub)
           this.createReviewList(div, pub)
+        } else {
+          this.removeDropDownInfo(div)
         }
       }.bind(this))
       
@@ -74,6 +76,13 @@ PubListView.prototype = {
     headingDiv.appendChild(dropDownArrow)
 
     div.appendChild(headingDiv)
+  },
+
+  removeDropDownInfo: function(div){
+    while (div.childNodes.length > 1){
+      var node = div.childNodes[1]
+      div.removeChild(node)
+    }
   },
 
   createAddressParagraph: function(div, pub){
