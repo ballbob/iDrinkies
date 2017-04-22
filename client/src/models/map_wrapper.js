@@ -2,7 +2,8 @@
 
 var MapWrapper = function ( container , coords , zoom ) {
   this.googlemap = new google.maps.Map( container , { center: coords , zoom: zoom })
-
+  var boxElement = document.querySelector('#search-box')
+  this.searchBox = new google.maps.places.SearchBox(boxElement)
 }
 
 MapWrapper.prototype = {
