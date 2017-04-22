@@ -1,7 +1,8 @@
 
 
 var MapWrapper = function ( container , coords , zoom ) {
-  this.googlemap = new google.maps.Map( container , { center: coords , zoom: zoom } );
+  this.googlemap = new google.maps.Map( container , { center: coords , zoom: zoom })
+
 }
 
 MapWrapper.prototype = {
