@@ -7,20 +7,13 @@ var PubGet = function(url){
 
 PubGet.prototype = {
   getData: function(callback){
-    //start your XMLHttpRequest
-    var request = new XMLHttpRequest()
-    //get from the URL specified in the constructor
-    request.open('GET',this.url)
-    //once that data has been got, put the data into the pubs array
-    request.onload = function(){
+    var request = new XMLHttpRequest() //start your XMLHttpRequest
+    request.open('GET',this.url) //get from the URL specified in the constructor
+    request.onload = function(){ //once that data has been got, put the data into the pubs array
       if(request.status === 200){
-        //our pubs are listed in the responseText for the request. So, 'de-stringify' it to get the javascript object back.
-        var jsonString = request.responseText
+        var jsonString = request.responseText //our pubs are listed in the responseText for the request. So, 'de-stringify' it to get the javascript object back.
         var pubsInfo = JSON.parse(jsonString)
-        console.log(pubsInfo)
         this.convertToPubObjects(pubsInfo)
-
-        console.log(this.pubs)
         callback(this.pubs)
       }
     }.bind(this)
