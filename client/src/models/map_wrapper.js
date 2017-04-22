@@ -10,7 +10,7 @@ var MapWrapper = function ( container , coords , zoom ) {
 
   //search button
   this.searchButton = document.querySelector('#submit-button')
-  this.searchButton.onclick = this.search(this.searchBox.value)
+  this.searchButton.addEventListener = ('click',this.search(this.searchBox.value,this.centreToResult))
 }
 
 MapWrapper.prototype = {
@@ -37,20 +37,21 @@ MapWrapper.prototype = {
   }
 },
 
-  search: function(searchTerm){
-    var userInput = searchTerm
-    var geocoder = new google.maps.Geocoder()
+  search: function(searchTerm, callback){
+    var placesFinder = new google.maps.places.PlacesService(this.googlemap)
 
-    //start up geocoder, feeding it the search term
-    geocoder.geocode({address: searchTerm}, function(results,status){
-      if(status == google.maps.GeocoderStatus.OK){
-        //reset the center of the map to the first search result
-        this.googlemap.setCenter(results[0].geometry.location)
-      }else{
-        console.log(google.maps.GeocoderStatus)
-        console.log('Search term produced no results')
-      }
-    })
+    var finderInput = {
+      query: locations[searchTerm]
+    }
+
+    placesFinder.textSearch(finderInput,callback)
+
+  },
+
+  centreToResult: function(results, status){
+    if (status == google.maps.places.PlacesServiceStatus.OK){
+      this.googlemap.setcenter(results[0].location)
+    }
   }
 
 }
