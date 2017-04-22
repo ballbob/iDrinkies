@@ -1,6 +1,6 @@
 var PubGet = require('./models/pub_getter.js')
 var PubListView = require('./views/pub_list_view.js')
-var MapWrapper = require("./models/map_wrapper.js")
+var GeoLocate = require("./models/geolocate.js")
 var MapView = require("./views/map_view.js")
 
 var app = function(){

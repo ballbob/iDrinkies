@@ -1,19 +1,10 @@
+var PlaceMarker = require("./place_marker.js")
 
-
-var MapWrapper = function ( container , coords , zoom ) {
+var GeoLocate = function ( container , coords , zoom ) {
   this.googlemap = new google.maps.Map( container , { center: coords , zoom: zoom } );
 }
 
-MapWrapper.prototype = {
-
-  addMarker: function ( coords ) {
-    var marker = new google.maps.Marker({
-      position: coords,
-      map: this.googlemap,
-      animation: google.maps.Animation.DROP
-    });
-    return marker;
-  },
+GeoLocate.prototype = {
 
   geolocate: function () {
     if (navigator.geolocation) {
@@ -24,11 +15,11 @@ MapWrapper.prototype = {
         };
         var center = {lat: position.coords.latitude , lng: position.coords.longitude};
         this.googlemap.setCenter( crds );
-        this.addMarker( crds );
+        PlaceMarker.addMarker( crds );
       }.bind(this));
     }
   }
 
 }
 
-module.exports = MapWrapper;
+module.exports = GeoLocate;

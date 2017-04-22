@@ -1,4 +1,5 @@
 var Pub = function(params){
+  this.id = null
   this.name = params.name,
   this.phone = params.phone,
   this.address = params.address,
