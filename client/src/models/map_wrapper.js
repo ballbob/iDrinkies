@@ -2,7 +2,10 @@
 
 var MapWrapper = function ( container , coords , zoom ) {
   this.googlemap = new google.maps.Map( container , { center: coords , zoom: zoom })
+
+  //searchbox - formed on loading. Set out the HTML element for the box
   var boxElement = document.querySelector('#search-box')
+  //make the box with your parameters
   this.searchBox = new google.maps.places.SearchBox(boxElement)
 }
 
