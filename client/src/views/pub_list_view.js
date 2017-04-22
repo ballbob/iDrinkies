@@ -7,8 +7,9 @@ PubListView.prototype = {
     for (i=0; i<pubs.length; i++){
       var pubDiv = document.createElement('div')
 
-      this.createImgLink(pubDiv, pubs[i])
+      
       this.createNameParagraph(pubDiv, pubs[i])
+      this.createImgLink(pubDiv, pubs[i])
       this.createAddressParagraph(pubDiv, pubs[i])
       this.createOpeningHoursList(pubDiv, pubs[i])
       this.createReviewList(pubDiv, pubs[i])
@@ -49,9 +50,21 @@ PubListView.prototype = {
   },
 
   createNameParagraph: function(div, pub){
-    var pubName = document.createElement('p')
-    pubName.innerText = "Pub: " + pub.name
-    div.appendChild(pubName)
+    var headingDiv = document.createElement('div')
+    headingDiv.style.display = 'flex'
+    headingDiv.style.flexDirection = 'row'
+    headingDiv.classList.add('pub-name')
+    var pubName = document.createElement('h4')
+    pubName.innerText = pub.name
+    pubName.style.margin = '5px'
+    var dropDownArrow = document.createElement('img')
+    dropDownArrow.src = 'dropdown_arrow.png'
+    dropDownArrow.style.backgroundColor = 'white'
+    dropDownArrow.style.height = '25px'
+    headingDiv.appendChild(pubName)
+    headingDiv.appendChild(dropDownArrow)
+
+    div.appendChild(headingDiv)
   },
 
   createAddressParagraph: function(div, pub){
