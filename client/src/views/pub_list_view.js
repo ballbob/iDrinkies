@@ -8,10 +8,10 @@ PubListView.prototype = {
       var pubDiv = document.createElement('div')
 
       
-      this.createNameParagraph(pubDiv, pubs[i], (i + 1))
-      var id = '#' + (i + 1)
-      var dropDown = document.querySelector(id)
-      console.log(dropDown)
+      this.createNameParagraph(pubDiv, pubs[i])
+      // var id = '#' + pubs[i].id
+      // var dropDown = document.querySelector(id)
+    
 
       // this.createImgLink(pubDiv, pubs[i])
       // this.createAddressParagraph(pubDiv, pubs[i])
@@ -46,7 +46,7 @@ PubListView.prototype = {
     }
   },
 
-  createNameParagraph: function(div, pub, id){
+  createNameParagraph: function(div, pub){
     var headingDiv = document.createElement('div')
     headingDiv.style.display = 'flex'
     headingDiv.style.flexDirection = 'row'
@@ -55,10 +55,18 @@ PubListView.prototype = {
     pubName.innerText = pub.name
     pubName.style.margin = '5px'
     var dropDownArrow = document.createElement('img')
-    dropDownArrow.id = id
+    dropDownArrow.id = pub.id
+    console.log('drop down id', dropDownArrow.id)
+
     dropDownArrow.src = 'dropdown_arrow.png'
     dropDownArrow.style.backgroundColor = 'white'
     dropDownArrow.style.height = '25px'
+    dropDownArrow.addEventListener('click', function(){
+      this.createImgLink(div, pub)
+      this.createAddressParagraph(div, pub)
+      this.createOpeningHoursList(div, pub)
+      this.createReviewList(div, pub)
+    }.bind(this))
     headingDiv.appendChild(pubName)
     headingDiv.appendChild(dropDownArrow)
 
