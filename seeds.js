@@ -86,7 +86,7 @@ db.pubs.insert([
     cc_ranking: "5000",
     review: "It's extinct. - Bob",
     special_events: [],
-    image: "https://upload.wikimedia.org/wikipedia/commons/1/1c/Squirrel_posing.jpg"
+    img: "https://upload.wikimedia.org/wikipedia/commons/1/1c/Squirrel_posing.jpg"
   },
 
   {
