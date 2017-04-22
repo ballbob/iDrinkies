@@ -7,17 +7,7 @@ PubListView.prototype = {
     for (var i=0; i<pubs.length; i++){
       var pubDiv = document.createElement('div')
 
-      
       this.createNameParagraph(pubDiv, pubs[i])
-      // var id = '#' + pubs[i].id
-      // var dropDown = document.querySelector(id)
-    
-
-      // this.createImgLink(pubDiv, pubs[i])
-      // this.createAddressParagraph(pubDiv, pubs[i])
-      // this.createOpeningHoursList(pubDiv, pubs[i])
-      // this.createReviewList(pubDiv, pubs[i])
-     
       this.listElement.appendChild(pubDiv)
     }
   },
@@ -46,21 +36,35 @@ PubListView.prototype = {
     }
   },
 
-  createNameParagraph: function(div, pub){
+  getDropDownArrow: function(pub){
+    var dropDownArrow = document.createElement('img')
+    dropDownArrow.id = pub.id
+    dropDownArrow.src = 'dropdown_arrow.png'
+    dropDownArrow.style.backgroundColor = 'white'
+    dropDownArrow.style.height = '25px'
+    return dropDownArrow
+  },
+
+  getPubHeader: function(pub){
     var headingDiv = document.createElement('div')
     headingDiv.style.display = 'flex'
     headingDiv.style.flexDirection = 'row'
     headingDiv.classList.add('pub-name')
+    return headingDiv
+  },
+
+  getPubNameTitle: function(pub){
     var pubName = document.createElement('h4')
     pubName.innerText = pub.name
     pubName.style.margin = '5px'
-    var dropDownArrow = document.createElement('img')
-    dropDownArrow.id = pub.id
-    console.log('drop down id', dropDownArrow.id)
+    return pubName
+  },
 
-    dropDownArrow.src = 'dropdown_arrow.png'
-    dropDownArrow.style.backgroundColor = 'white'
-    dropDownArrow.style.height = '25px'
+  createNameParagraph: function(div, pub){
+    var headingDiv = this.getPubHeader(pub)
+    var pubName = this.getPubNameTitle(pub)
+    var dropDownArrow = this.getDropDownArrow(pub)
+
     dropDownArrow.addEventListener('click', function(){
       if (div.childNodes.length <= 2){
           this.createImgLink(div, pub)
@@ -74,7 +78,6 @@ PubListView.prototype = {
       
     headingDiv.appendChild(pubName)
     headingDiv.appendChild(dropDownArrow)
-
     div.appendChild(headingDiv)
   },
 
