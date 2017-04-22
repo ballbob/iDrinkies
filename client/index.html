@@ -2,23 +2,32 @@
 
 <html lang="en">
 
-  <head>
-    <title>iDrinkies map: where's the nearest booze?</title>
-    <link rel="stylesheet" href="/main.css">
-    <script src="https://maps.googleapis.com/maps/api/js"></script>
-    <script src="bundle.js"></script>
-  </head>
+<head>
+  <title>iDrinkies map: where's the nearest booze?</title>
+  <link rel="stylesheet" href="/main.css">
+  <script src="https://maps.googleapis.com/maps/api/js"></script>
+  <script src="bundle.js"></script>
+</head>
 
-  <body>
-    <section id="location-selectors">
+<body>
+  
+  <div id="control-block">
+    <header>
       <button id="near-me-button">Find booze nearby!</button>
-      <input id="search-box"/>
-      <button id="submit-button">Search an area</button>
-    </section>
-    <section id="map-and-details">
+    </header>
+    <main>
       <section id="map"></section>
+    </main>
+    <nav>
+      <input id="search-box"/>
+      <button id="submit-button">Search</button>
+    </nav>
+  </div>
+
+    <article id="content-block">
       <section id="pub-list"></section>
-    </section>
-  </body>
+    </article>
+
+</body>
 
 </html>
