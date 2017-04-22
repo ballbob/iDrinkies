@@ -8,19 +8,16 @@ PubListView.prototype = {
       var pubDiv = document.createElement('div')
 
       
-      this.createNameParagraph(pubDiv, pubs[i])
-      this.createImgLink(pubDiv, pubs[i])
-      this.createAddressParagraph(pubDiv, pubs[i])
-      this.createOpeningHoursList(pubDiv, pubs[i])
-      this.createReviewList(pubDiv, pubs[i])
-      
+      this.createNameParagraph(pubDiv, pubs[i], (i + 1))
+      var id = '#' + (i + 1)
+      var dropDown = document.querySelector(id)
+      console.log(dropDown)
 
-      // var pubFoodHrs = document.createElement('p')
-      // pubFoodHrs.innerText = "Food served from: " + pubs[i]
-      // food_serving_hours
-      // pubDiv.appendChild(pubFoodHrs)
-
-
+      // this.createImgLink(pubDiv, pubs[i])
+      // this.createAddressParagraph(pubDiv, pubs[i])
+      // this.createOpeningHoursList(pubDiv, pubs[i])
+      // this.createReviewList(pubDiv, pubs[i])
+     
       this.listElement.appendChild(pubDiv)
     }
   },
@@ -49,7 +46,7 @@ PubListView.prototype = {
     }
   },
 
-  createNameParagraph: function(div, pub){
+  createNameParagraph: function(div, pub, id){
     var headingDiv = document.createElement('div')
     headingDiv.style.display = 'flex'
     headingDiv.style.flexDirection = 'row'
@@ -58,6 +55,7 @@ PubListView.prototype = {
     pubName.innerText = pub.name
     pubName.style.margin = '5px'
     var dropDownArrow = document.createElement('img')
+    dropDownArrow.id = id
     dropDownArrow.src = 'dropdown_arrow.png'
     dropDownArrow.style.backgroundColor = 'white'
     dropDownArrow.style.height = '25px'
