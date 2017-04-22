@@ -1,13 +1,13 @@
 var Pub = function(params){
   this.name = params.name,
-  this.phoneNo = params.phoneNo,
+  this.phone = params.phone,
   this.address = params.address,
   this.latlng = params.latlng,
-  this.openingHours = params.openingHours,
-  this.foodServingTimes = params.foodServingTimes,
-  this.CCRanking = params.CCRanking,
-  this.reviews = []
-  this.specialEvents = []
+  this.opening_hours = params.opening_hours,
+  this.food_serving_times = params.food_serving_times,
+  this.cc_ranking = params.cc_ranking,
+  this.reviews = [params.review] || []
+  this.special_events = params.special_events || []
   this.img = params.img
 }
 
@@ -17,7 +17,7 @@ Pub.prototype = {
   },
 
   addSpecialEvent: function(eventInfo){
-    this.specialEvents.push(eventInfo)
+    this.special_events.push(eventInfo)
   }
 }
 
