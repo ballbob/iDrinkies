@@ -41,7 +41,7 @@ PubListView.prototype = {
     dropDownArrow.id = pub.id
     dropDownArrow.src = 'dropdown_arrow.png'
     dropDownArrow.style.backgroundColor = 'white'
-    dropDownArrow.style.height = '25px'
+    dropDownArrow.style.height = '20px'
     return dropDownArrow
   },
 
