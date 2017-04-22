@@ -2,7 +2,7 @@ var GeoLocate = require("../models/geolocate.js")
 var PlaceMarker = require("../models/place_marker.js")
 
 var MapView = function () {
-  this.mainMap
+  this.mapView
 }
 
 MapView.prototype = {
@@ -10,13 +10,13 @@ MapView.prototype = {
   initialize: function () {
     var mapSection = document.getElementById('map');
     var center = { lat: 0 , lng: 0 }
-    this.mainMap = new GeoLocate( mapSection, center, 16 );
+    this.mapView = new GeoLocate( mapSection, center, 16 );
     PlaceMarker.addMarker( center );
-    this.mainMap.geolocate();
+    this.mapView.geolocate();
   },
 
   centerNearMe: function(){
-    this.mainMap.geolocate()
+    this.mapView.geolocate()
   }
 
 }

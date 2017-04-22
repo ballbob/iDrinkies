@@ -1,5 +1,6 @@
 var PlaceMarker = function ( coords ) {
   this.coords = coords;
+  this.googlemap = new google.maps.Map( container , { center: coords , zoom: zoom } );
 }
 
 PlaceMarker.prototype = {

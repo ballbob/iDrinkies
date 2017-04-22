@@ -1,12 +1,12 @@
 var Pub = require('./pub.js')
 
-
-var PubGet = function(url){
+var PubGetter = function(url){
   this.url = url
   this.pubs = []
 }
 
-PubGet.prototype = {
+PubGetter.prototype = {
+
   getData: function(callback){
     var request = new XMLHttpRequest() //start your XMLHttpRequest
     request.open('GET',this.url) //get from the URL specified in the constructor
@@ -28,6 +28,7 @@ PubGet.prototype = {
       this.pubs.push(pub)
     }.bind(this))
   }
+  
 }
 
-module.exports = PubGet
+module.exports = PubGetter

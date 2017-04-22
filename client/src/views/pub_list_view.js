@@ -6,7 +6,7 @@ PubListView.prototype = {
   render: function(pubs){
     for (var i=0; i<pubs.length; i++){
       var pubDiv = document.createElement('div')
-
+      
       this.createNameParagraph(pubDiv, pubs[i])
       this.listElement.appendChild(pubDiv)
     }
@@ -75,7 +75,7 @@ PubListView.prototype = {
           this.removeDropDownInfo(div)
         }
       }.bind(this))
-      
+
     headingDiv.appendChild(pubName)
     headingDiv.appendChild(dropDownArrow)
     div.appendChild(headingDiv)
