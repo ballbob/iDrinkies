@@ -70,7 +70,7 @@ db.pubs.insert([
   {
     name: "The Red Squirrel",
     phone: "0131 229 9933",
-    address: "21 Lothian Road, Old Town, Edinburgh EH1 2DJ", 
+    address: "21 Lothian Road, Old Town, Edinburgh EH1 2DJ",
     latlng: [55.947121,-3.2060694],
     opening_hours: {
       monday: "9am - 12am",
@@ -226,7 +226,7 @@ db.pubs.insert([
 },
 
 {
-  name: "The Srathaven",
+  name: "The Strathaven",
   phone: "01357 523817",
   address: "6 Waterside St, Strathaven ML10 6AW",
   latlng: [55.6820455, -4.0898807],
@@ -241,7 +241,7 @@ db.pubs.insert([
   },
   food_serving_times: "12pm - 10pm",
   cc_ranking: 6,
-  review: "If you have to be in Srathaven, you might as well be here - Leon",
+  review: "If you have to be in Strathaven, you might as well be here - Leon",
   special_events: ["Tuesday is bingo night"],
   img: "http://thestrathaven.co.uk/wp-content/uploads/2016/12/IMG_0896-min-1024x683.jpg"
 },
