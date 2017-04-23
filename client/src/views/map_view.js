@@ -1,4 +1,4 @@
-var MapWrapper = require("../models/map_wrapper.js")
+ var MapWrapper = require("../models/map_wrapper.js")
 
 var MapView = function () {
   this.mainMap
