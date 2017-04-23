@@ -1,4 +1,4 @@
-
+var PubGet = require('./pub_getter.js')
 
 var MapWrapper = function ( container , coords , zoom ) {
   this.googlemap = new google.maps.Map( container , { center: coords , zoom: zoom })
@@ -55,6 +55,18 @@ MapWrapper.prototype = {
 
   centreToResult: function(latitude, longitude, map){
     map.setCenter({lat: latitude, lng: longitude})
+  },
+
+  pubLocationMarkers: function(){
+    pubGetter = new PubGet("http://localhost:3000/api/pubs")
+    pubGetter.getData(function(pubs){
+      for (i=0; i<pubs.length; i++){
+        this.addMarker({
+          lat: pubs[i].latlng[0],
+          lng: pubs[i].latlng[1],
+          })
+      }
+    }.bind(this))
   }
 
 }

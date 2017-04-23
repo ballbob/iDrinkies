@@ -18,7 +18,6 @@ PubGet.prototype = {
         //our pubs are listed in the responseText for the request. So, 'de-stringify' it to get the javascript object back.
         var jsonString = request.responseText
         var pubsInfo = JSON.parse(jsonString)
-        console.log(pubsInfo)
         this.convertToPubObjects(pubsInfo)
 
         callback(this.pubs)

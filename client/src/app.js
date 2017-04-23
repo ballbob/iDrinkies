@@ -24,6 +24,7 @@ var app = function(){
   var nearMeButton = document.querySelector('#near-me-button')
   nearMeButton.addEventListener('click', function(){
     mapView.centerNearMe()
+    mapView.mainMap.pubLocationMarkers()
   })
 
 }
