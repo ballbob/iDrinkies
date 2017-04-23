@@ -10,7 +10,7 @@ var MapWrapper = function ( container , coords , zoom ) {
 
   //search button
   this.searchButton = document.querySelector('#submit-button')
-  this.searchButton.addEventListener = ('click',this.search(this.searchBox.value,this.centreToResult))
+  this.searchButton.addListener('click',this.search(this.searchBox.value,this.centreToResult))
 }
 
 MapWrapper.prototype = {
