@@ -7,11 +7,12 @@ var MapWrapper = function ( container , coords , zoom ) {
   var boxElement = document.querySelector('#search-box')
   //make the box with your parameters
   this.searchBox = new google.maps.places.SearchBox(boxElement)
-  console.log('search box', boxElement)
+
   //search button
   this.searchButton = document.querySelector('#submit-button')
+
   this.searchBox.addListener('places_changed', function(){
-    console.log('places', this.searchBox.getPlaces())
+    
     var selections = this.searchBox.getPlaces()
     this.search(selections, this.centreToResult, this.googlemap)
   }.bind(this))
@@ -43,20 +44,16 @@ MapWrapper.prototype = {
   }
 },
 
-  search: function(searchTerm, callback, map){
+  search: function(searchChoices, callback, map){
     var placesFinder = new google.maps.places.PlacesService(this.googlemap)
 
-    console.log('search term', searchTerm)
-    var lat = searchTerm[0].geometry.location.lat()
-    var lng = searchTerm[0].geometry.location.lng()
-    console.log('latlng', lat, lng)
+    var lat = searchChoices[0].geometry.location.lat()
+    var lng = searchChoices[0].geometry.location.lng()
 
     callback(lat, lng, map)
-
   },
 
   centreToResult: function(latitude, longitude, map){
-    
     map.setCenter({lat: latitude, lng: longitude})
   }
 
