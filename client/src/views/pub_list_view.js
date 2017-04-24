@@ -67,11 +67,8 @@ PubListView.prototype = {
 
     dropDownArrow.addEventListener('click', function(){
       if (div.childNodes.length <= 2){
-          this.createImgLink(div, pub)
-          this.createAddressParagraph(div, pub)
-          this.createOpeningHoursList(div, pub)
-          this.createReviewList(div, pub)
-        } else {
+        this.dropDownInfo(pub,div)      
+      } else {
           this.removeDropDownInfo(div)
         }
       }.bind(this))
@@ -79,6 +76,13 @@ PubListView.prototype = {
     headingDiv.appendChild(pubName)
     headingDiv.appendChild(dropDownArrow)
     div.appendChild(headingDiv)
+  },
+
+  dropDownInfo: function(pub,div){
+    this.createImgLink(div, pub)
+    this.createAddressParagraph(div, pub)
+    this.createOpeningHoursList(div, pub)
+    this.createReviewList(div, pub)
   },
 
   removeDropDownInfo: function(div){

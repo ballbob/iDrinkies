@@ -66,9 +66,15 @@ MapWrapper.prototype = {
 
         marker.addListener('click',function(){
           pubInfo.open(this.googlemap, marker)
-
           var div = document.createElement('div')
-          pubLister.createNameParagraph(div,pub)
+          marker.addListener('click', function(){
+            if (div.childNodes.length <= 2){
+              pubLister.dropDownInfo(pub,div)      
+            } else {
+                pubLister.removeDropDownInfo(div)
+              }
+            }.bind(this))
+                
         })
           return marker;
         })
