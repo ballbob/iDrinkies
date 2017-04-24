@@ -34,8 +34,8 @@ MapWrapper.prototype = {
       animation: google.maps.Animation.DROP,
       icon: {
         path: google.maps.SymbolPath.CIRCLE,
-        scale: 5,
-        fillColor: 'red',
+        scale: 10,
+        fillColor: '#66ff33',
         fillOpacity: 1.0
       }
     });
