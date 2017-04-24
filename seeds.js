@@ -23,7 +23,7 @@ db.pubs.insert([
     cc_ranking: "7/10",
     review: "One of the staff punched me",
     special_events: [],
-    img: "https://lh4.googleusercontent.com/-xmxzqjCDIJY/WLLYa5a8BzI/AAAAAAAAAPE/OOnnz2zDSh0EgI5kJV7uVPQn8T0TIYwWACLIB/w408-h229-k-no/"
+    img: "/shakespeare.jpg"
   },
 
   {

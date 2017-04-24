@@ -28,6 +28,7 @@ MapWrapper.prototype = {
   },
 
   addPubMarker: function (pub, coords ) {
+    //create the marker
     var marker = new google.maps.Marker({
       position: coords,
       map: this.googlemap,
@@ -39,14 +40,18 @@ MapWrapper.prototype = {
         fillOpacity: 1.0
       }
     });
+
     //add the info window. First, define what goes inside the info window div
     var windowContents = '<div>' + 
     '<h3>' + pub.name + '</h3>' +
-    '<p>' + pub.address + '</p>'
+    '<p>' + pub.address + '</p>' +
+    '<img src="' + pub.img + '">' +
     '</div>'
 
+    //create the info window and put your details into it 
     var pubInfo = new google.maps.InfoWindow({content: windowContents})
 
+    //set the info window to come up when clicked
     marker.addListener('click',function(){
       pubInfo.open(this.googlemap, marker)
     })
