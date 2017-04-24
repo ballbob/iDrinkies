@@ -5,15 +5,14 @@ var MapWrapper = function ( container , coords , zoom ) {
   
   //searchbox - formed on loading. Set out the HTML element for the box
   var boxElement = document.querySelector('#search-box')
+
   //make the box with your parameters
-  this.searchBox = new google.maps.places.SearchBox(boxElement)
+  this.searchBox = new google.maps.places.SearchBox(boxElement,options)
 
   this.searchBox.addListener('places_changed', function(){
-    
     var selections = this.searchBox.getPlaces()
     this.search(selections, this.centreToResult, this.googlemap)
   }.bind(this))
-
   
 }
 
@@ -43,6 +42,8 @@ MapWrapper.prototype = {
 
   search: function(searchChoices, callback, map){
     var placesFinder = new google.maps.places.PlacesService(this.googlemap)
+
+    var currentLocation = this.getCurrentPosition()
 
     var lat = searchChoices[0].geometry.location.lat()
     var lng = searchChoices[0].geometry.location.lng()

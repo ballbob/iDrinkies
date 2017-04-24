@@ -11,15 +11,7 @@ MapView.prototype = {
     var mapSection = document.getElementById('map');
     var center = { lat: 0 , lng: 0 }
     this.mainMap = new MapWrapper( mapSection, center, 16 );
-    this.mainMap.addMarker(center);
-    this.mainMap.geolocate();
-    
-    // var nearMeButton = document.querySelector("#near-me-button");
-    
-
-    // var findlocation = function () {
-    //   mainMap.geoLocate();
-    // };
+    this.mainMap.geolocate(); 
   },
 
   centerNearMe: function(){
