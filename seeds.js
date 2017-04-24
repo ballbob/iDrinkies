@@ -23,7 +23,7 @@ db.pubs.insert([
     cc_ranking: "7/10",
     review: "One of the staff punched me",
     special_events: [],
-    img: "https://lh4.googleusercontent.com/-xmxzqjCDIJY/WLLYa5a8BzI/AAAAAAAAAPE/OOnnz2zDSh0EgI5kJV7uVPQn8T0TIYwWACLIB/w408-h229-k-no/"
+    img: "/shakespeare.jpg"
   },
 
   {
@@ -104,7 +104,7 @@ db.pubs.insert([
     cc_ranking: 8,
     review: "Great selection of beers, really unique flavours not found elsewhere, no full pints though, expensive",
     special_events: ["From IPA days, blind beer boards and many more. some planned, some very last minute - and not forgetting our monthy meet the brewer."],
-    img: "https://goo.gl/maps/zapacbfpkd22",
+    img: "/hangingbat.jpg",
   },
 
   {
@@ -123,7 +123,7 @@ db.pubs.insert([
     cc_ranking: 6,
     review: "Traditional independent bar with a good selection of real ales, not alot of space if you are with a larger group, but cozy",
     special_events: ["Home of the Edinburgh Rum Club"],
-    img: "https://goo.gl/maps/SpPGJedGqwG2",
+    img: "/blueblazer.jpg",
   },
 
   {
@@ -142,7 +142,7 @@ db.pubs.insert([
     cc_ranking: 7,
     review: "Traditional sports bar serving a sizeable menu of pub grub.",
     special_events: ["Can be booked for functions and reserve a table for groups"],
-    img: "https://goo.gl/maps/zvBC4pJmPc82",
+    img: "/chanter.jpg",
   },
 
   {
@@ -271,7 +271,7 @@ db.pubs.insert([
   name: "The Old Brewery",
   phone: "01259 722722",
   address: "20 E Vennel, Alloa FK10 1ED",
-  latlng: [56.1148523, 3.7950386],
+  latlng: [56.1148523, -3.7950386],
   opening_hours: {
     monday: "11am - 11pm",
     tuesday: "11am - 11pm",
@@ -291,7 +291,7 @@ db.pubs.insert([
   name: "Peppe's Lounge",
   phone: "01259 210706",
   address: "12 Mar Pl, Alloa FK10 2AB",
-  latlng: [56.1170976, 3.7969627],
+  latlng: [56.1170976, -3.7969627],
   opening_hours: {
     monday: "12pm - 11pm",
     tuesday: "12pm - 11pm",
@@ -310,7 +310,7 @@ db.pubs.insert([
   name: "The Espy",
   phone: "0131 669 0082",
   address: "62-64 Bath St, Edinburgh EH15 1HF",
-  latlng: [55.951732, 3.1158213],
+  latlng: [55.9545965,-3.1108181],
   opening_hours: {
     monday: "9am - 1am",
     tuesday: "9am - 1am",
@@ -330,7 +330,7 @@ db.pubs.insert([
   name: "Skylark",
   phone: "0131 629 3037",
   address: "243 Portobello High St, Edinburgh EH15 2AW",
-  latlng: [55.9524196, 3.1136766],
+  latlng: [55.9524196, -3.1136766],
   opening_hours: {
     monday: "10am - 5pm",
     tuesday: "10am - 5pm",

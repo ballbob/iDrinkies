@@ -1,6 +1,7 @@
 var PubGet = require('./models/pub_getter.js')
 var PubListView = require('./views/pub_list_view.js')
 var MapWrapper = require("./models/map_wrapper.js")
+var DistanceCalculator = require("./models/distance_calculator.js")
 var MapView = require("./views/map_view.js")
 
 var app = function(){
@@ -20,12 +21,16 @@ var app = function(){
   var mapView = new MapView()
   mapView.initialize()
 
+  var distanceCalculator = new DistanceCalculator()
   //get a reference to the 'near me' button
   var nearMeButton = document.querySelector('#map-button')
   nearMeButton.addEventListener('click', function(){
     mapView.centerNearMe()
-    mapView.mainMap.pubLocationMarkers()
+    mapView.mainMap.pubLocationMarkers(distanceCalculator)
   })
+
+  
+  // distanceCalculator.calculateDistance({lat: 55.953251, lng: -3.188267}, {lat: 55.865101, lng: -4.433177})
 
 }
 
