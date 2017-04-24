@@ -8,9 +8,6 @@ var MapWrapper = function ( container , coords , zoom ) {
   //make the box with your parameters
   this.searchBox = new google.maps.places.SearchBox(boxElement)
 
-  //search button
-  this.searchButton = document.querySelector('#submit-button')
-
   this.searchBox.addListener('places_changed', function(){
     
     var selections = this.searchBox.getPlaces()
