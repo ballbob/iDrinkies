@@ -142,7 +142,7 @@ db.pubs.insert([
     cc_ranking: 7,
     review: "Traditional sports bar serving a sizeable menu of pub grub.",
     special_events: ["Can be booked for functions and reserve a table for groups"],
-    img: "https://goo.gl/maps/zvBC4pJmPc82",
+    img: "/chanter.jpg",
   },
 
   {

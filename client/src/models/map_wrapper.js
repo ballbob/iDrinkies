@@ -35,7 +35,7 @@ MapWrapper.prototype = {
       animation: google.maps.Animation.DROP,
       icon: {
         path: google.maps.SymbolPath.CIRCLE,
-        scale: 10,
+        scale: 5,
         fillColor: '#66ff33',
         fillOpacity: 1.0
       }
