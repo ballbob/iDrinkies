@@ -1,5 +1,6 @@
 var Pub = require('./pub.js')
 
+
 var PubGet = function(url){
   this.url = url
   this.pubs = []
@@ -17,10 +18,8 @@ PubGet.prototype = {
         //our pubs are listed in the responseText for the request. So, 'de-stringify' it to get the javascript object back.
         var jsonString = request.responseText
         var pubsInfo = JSON.parse(jsonString)
-        console.log(pubsInfo)
         this.convertToPubObjects(pubsInfo)
 
-        console.log(this.pubs)
         callback(this.pubs)
       }
     }.bind(this)
@@ -30,6 +29,7 @@ PubGet.prototype = {
   convertToPubObjects: function(pubsFromAPI){
     pubsFromAPI.forEach(function(pubInfo){
       var pub = new Pub(pubInfo)
+      pub.id = pubInfo._id
       this.pubs.push(pub)
     }.bind(this))
   }

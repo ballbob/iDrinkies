@@ -16,8 +16,16 @@ var app = function(){
     pubLister.render(pubs)
   })
 
+  //get the map and render to screen
   var mapView = new MapView()
   mapView.initialize()
+
+  //get a reference to the 'near me' button
+  var nearMeButton = document.querySelector('#near-me-button')
+  nearMeButton.addEventListener('click', function(){
+    mapView.centerNearMe()
+    mapView.mainMap.pubLocationMarkers()
+  })
 
 }
 

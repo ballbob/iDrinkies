@@ -4,22 +4,10 @@ var PubListView = function(listElement){
 
 PubListView.prototype = {
   render: function(pubs){
-    for (i=0; i<pubs.length; i++){
+    for (var i=0; i<pubs.length; i++){
       var pubDiv = document.createElement('div')
 
-      this.createImgLink(pubDiv, pubs[i])
       this.createNameParagraph(pubDiv, pubs[i])
-      this.createAddressParagraph(pubDiv, pubs[i])
-      this.createOpeningHoursList(pubDiv, pubs[i])
-      this.createReviewList(pubDiv, pubs[i])
-      
-
-      // var pubFoodHrs = document.createElement('p')
-      // pubFoodHrs.innerText = "Food served from: " + pubs[i]
-      // food_serving_hours
-      // pubDiv.appendChild(pubFoodHrs)
-
-
       this.listElement.appendChild(pubDiv)
     }
   },
@@ -48,10 +36,56 @@ PubListView.prototype = {
     }
   },
 
+  getDropDownArrow: function(pub){
+    var dropDownArrow = document.createElement('img')
+    dropDownArrow.id = pub.id
+    dropDownArrow.src = 'dropdown_arrow.png'
+    dropDownArrow.style.backgroundColor = 'white'
+    dropDownArrow.style.height = '20px'
+    return dropDownArrow
+  },
+
+  getPubHeader: function(pub){
+    var headingDiv = document.createElement('div')
+    headingDiv.style.display = 'flex'
+    headingDiv.style.flexDirection = 'row'
+    headingDiv.classList.add('pub-name')
+    return headingDiv
+  },
+
+  getPubNameTitle: function(pub){
+    var pubName = document.createElement('h4')
+    pubName.innerText = pub.name
+    pubName.style.margin = '5px'
+    return pubName
+  },
+
   createNameParagraph: function(div, pub){
-    var pubName = document.createElement('p')
-    pubName.innerText = "Pub: " + pub.name
-    div.appendChild(pubName)
+    var headingDiv = this.getPubHeader(pub)
+    var pubName = this.getPubNameTitle(pub)
+    var dropDownArrow = this.getDropDownArrow(pub)
+
+    dropDownArrow.addEventListener('click', function(){
+      if (div.childNodes.length <= 2){
+          this.createImgLink(div, pub)
+          this.createAddressParagraph(div, pub)
+          this.createOpeningHoursList(div, pub)
+          this.createReviewList(div, pub)
+        } else {
+          this.removeDropDownInfo(div)
+        }
+      }.bind(this))
+      
+    headingDiv.appendChild(pubName)
+    headingDiv.appendChild(dropDownArrow)
+    div.appendChild(headingDiv)
+  },
+
+  removeDropDownInfo: function(div){
+    while (div.childNodes.length > 1){
+      var node = div.childNodes[1]
+      div.removeChild(node)
+    }
   },
 
   createAddressParagraph: function(div, pub){
