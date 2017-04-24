@@ -27,7 +27,8 @@ MapWrapper.prototype = {
     return marker;
   },
 
-  addPubMarker: function (pubName, coords ) {
+  addPubMarker: function (pubName, coords, distanceCalculator ) {
+    
     var marker = new google.maps.Marker({
       position: coords,
       map: this.googlemap,
@@ -39,20 +40,36 @@ MapWrapper.prototype = {
         fillOpacity: 1.0
       }
     });
-    //add the info window. First, define what goes inside the info window div
-    var windowContents = '<div>' + 
-    '<h3>' + pubName + '</h3>' +
+    
 
-    '</div>'
+    //get current position
+      navigator.geolocation.getCurrentPosition(function ( position ) {
+        var currentLocation = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        }
 
-    var pubInfo = new google.maps.InfoWindow({content: windowContents})
+        distanceCalculator.calculateDistance(currentLocation, coords, function(distance){
+          //add the info window. First, define what goes inside the info window div
+          
+          var windowContents = '<div>' + 
+          '<h3>' + pubName + '</h3>' + '<p>Distance from you: ' + distance + '</p>'
 
-    marker.addListener('click',function(){
-      pubInfo.open(this.googlemap, marker)
-    })
+          '</div>'
+
+          var pubInfo = new google.maps.InfoWindow({content: windowContents})
+
+          marker.addListener('click',function(){
+            pubInfo.open(this.googlemap, marker)
+          })
+          return marker;
+        })
+
+    }.bind(this))
+
 
     //return the marker
-    return marker;
+    
   },
 
   geolocate: function () {
@@ -83,7 +100,7 @@ MapWrapper.prototype = {
     map.setCenter({lat: latitude, lng: longitude})
   },
 
-  pubLocationMarkers: function(){
+  pubLocationMarkers: function(distanceCalculator){
     pubGetter = new PubGet("http://localhost:3000/api/pubs")
     pubGetter.getData(function(pubs){
       for (i=0; i<pubs.length; i++){
@@ -94,7 +111,7 @@ MapWrapper.prototype = {
           {
             lat: pubs[i].latlng[0],
             lng: pubs[i].latlng[1],
-          })
+          }, distanceCalculator)
       }
     }.bind(this))
   }
