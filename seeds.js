@@ -9,7 +9,7 @@ db.pubs.insert([
     name: "Shakespeare",
     phone: "0131 228 8400",
     address: "65 Lothian Rd, Edinburgh EH1 2DJ",
-    latlng: [55.9463536,-3.2063671],
+    latlng: [55.947564,-3.205851],
     opening_hours: {
       monday: "11am – 11pm",
       tuesday: "11am – 11pm",
@@ -29,7 +29,7 @@ db.pubs.insert([
   {
     name: "Beer Kitchen",
     address: "81-83 Lothian Rd, Edinburgh EH3 9AW",
-    latlng: [55.9467485,-3.2069545],
+    latlng: [55.946624,-3.205518],
     opening_hours: {
       monday: "9am - 1am",
       tuesday: "9am - 1am",
@@ -50,7 +50,7 @@ db.pubs.insert([
     name: "The Caley",
     phone: "0131 656 0752",
     address: "31 Lothian Road, Edinburgh EH1 2DJ",
-    latlng: [55.9467485,-3.2069545],
+    latlng: [55.949588,-3.207273],
     opening_hours: {
       monday: "4pm - 1am",
       tuesday: "4pm - 1am",
@@ -71,7 +71,7 @@ db.pubs.insert([
     name: "The Red Squirrel",
     phone: "0131 229 9933",
     address: "21 Lothian Road, Old Town, Edinburgh EH1 2DJ",
-    latlng: [55.947121,-3.2060694],
+    latlng: [55.948398,-3.206243],
     opening_hours: {
       monday: "9am - 12am",
       tuesday: "9am - 12am",
@@ -91,7 +91,7 @@ db.pubs.insert([
   {
     name: "The Hanging Bat",
     address: "133 Lothian RD, Edinburgh EH3 9AB",
-    latlng: [55.9463476,-3.2063564],
+    latlng: [55.945517,-3.205159],
     opening_hours: {
       monday: "12pm – 12am",
       tuesday: "12pm – 12am",
@@ -110,7 +110,7 @@ db.pubs.insert([
   {
     name: "Blue Blazer",
     address: "2 Spittal St, Edinburgh EH3 9DX",
-    latlng: [55.946089,-3.2030417],
+    latlng: [55.945944,-3.203153],
     opening_hours: {
       monday: "12pm – 12am",
       tuesday: "12pm – 12am",
@@ -129,7 +129,7 @@ db.pubs.insert([
   {
     name: "The Chanter",
     address: "30-32 Bread St, Edinburgh EH3 9AF",
-    latlng: [55.946089,-3.2030417],
+    latlng: [55.945748,-3.203829],
     opening_hours: {
       monday: "11am – 1am",
       tuesday: "11am – 1am",
@@ -149,7 +149,7 @@ db.pubs.insert([
     name: "All Bar One",
     phone_number: "0131 221 7951",
     address: "50 Lothian Rd, Edinburgh EH3 9BY",
-    latlng: [55.9465957,-3.2070256],
+    latlng: [55.947470,-3.207080],
     opening_hours: {
       monday: "8am - 11pm",
       tuesday: "8am - 11pm",
@@ -170,7 +170,7 @@ db.pubs.insert([
     name: "Lebowskis",
     phone_number: "0131 446 1779",
     address: "18 Morrison St, Edinburgh EH3 8BJ",
-    latlng: [55.9476308,-3.2061632],
+    latlng: [55.945980,-3.206511],
     opening_hours: {
       monday: "11am – 1am",
       tuesday: "11am – 1am",
@@ -189,7 +189,7 @@ db.pubs.insert([
     name: "Henry's Cellar Bar",
     phone_number: "0131 629 2992",
     address: "16A Morrison Street, Edinburgh EH3 8BJ",
-    latlng: [55.9476308,-3.2061632],
+    latlng: [55.945933,-3.206166],
     opening_hours: {
       monday: "5pm – 1am",
       tuesday: "5pm– 1am",
@@ -209,7 +209,7 @@ db.pubs.insert([
   name: "Camps Bar",
   phone: "01955 603273",
   address: "128-132 High St, Wick KW1 4LR",
-  latlng: [58.4427301, -3.0911491],
+  latlng: [58.442730, -3.088960],
   opening_hours: {
     monday: "12pm - 11pm",
     tuesday: "12pm - 11pm",
@@ -250,7 +250,7 @@ db.pubs.insert([
   name: "Southside Social",
   phone: "0131 662 0974",
   address: "Meadow Bar, 42-44 Buccleuch St, Edinburgh EH8 9LP",
-  latlng: [55.9427703, -3.1868229],
+  latlng: [55.942770, -3.184634],
   opening_hours: {
     monday: "12pm - 11pm",
     tuesday: "12pm - 11pm",
@@ -271,7 +271,7 @@ db.pubs.insert([
   name: "The Old Brewery",
   phone: "01259 722722",
   address: "20 E Vennel, Alloa FK10 1ED",
-  latlng: [56.1148523, -3.7950386],
+  latlng: [56.114706, -3.789763],
   opening_hours: {
     monday: "11am - 11pm",
     tuesday: "11am - 11pm",
@@ -310,7 +310,7 @@ db.pubs.insert([
   name: "The Espy",
   phone: "0131 669 0082",
   address: "62-64 Bath St, Edinburgh EH15 1HF",
-  latlng: [55.9545965,-3.1108181],
+  latlng: [55.954897,-3.110716],
   opening_hours: {
     monday: "9am - 1am",
     tuesday: "9am - 1am",
@@ -330,7 +330,7 @@ db.pubs.insert([
   name: "Skylark",
   phone: "0131 629 3037",
   address: "243 Portobello High St, Edinburgh EH15 2AW",
-  latlng: [55.9524196, -3.1136766],
+  latlng: [55.951901, -3.111180],
   opening_hours: {
     monday: "10am - 5pm",
     tuesday: "10am - 5pm",
