@@ -79,10 +79,14 @@ PubListView.prototype = {
   },
 
   dropDownInfo: function(pub,div){
+    console.log('drop down info function called')
+    console.log('pub', pub)
+    console.log('div', div)
     this.createImgLink(div, pub)
     this.createAddressParagraph(div, pub)
     this.createOpeningHoursList(div, pub)
     this.createReviewList(div, pub)
+    this.listElement.appendChild(div)
   },
 
   removeDropDownInfo: function(div){

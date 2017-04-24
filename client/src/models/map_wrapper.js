@@ -64,17 +64,23 @@ MapWrapper.prototype = {
 
         var pubInfo = new google.maps.InfoWindow({content: windowContents})
 
+        marker.addListener('click', function(){
+          console.log('dropdown listener activated')
+          
+          var div = document.querySelector('#pub-list')
+          var pubDiv = document.createElement('div')
+          
+          if (pubDiv.childNodes.length <= 2){
+            console.log('child nodes less than 2')
+            pubLister.dropDownInfo(pub,pubDiv)      
+          } else {
+            pubLister.removeDropDownInfo(pubDiv)
+          }
+        
+        })
+
         marker.addListener('click',function(){
           pubInfo.open(this.googlemap, marker)
-          var div = document.createElement('div')
-          marker.addListener('click', function(){
-            if (div.childNodes.length <= 2){
-              pubLister.dropDownInfo(pub,div)      
-            } else {
-                pubLister.removeDropDownInfo(div)
-              }
-            }.bind(this))
-                
         })
           return marker;
         })
