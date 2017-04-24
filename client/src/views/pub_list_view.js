@@ -48,8 +48,6 @@ PubListView.prototype = {
 
   getPubHeader: function(pub){
     var headingDiv = document.createElement('div')
-    // headingDiv.style.display = 'flex'
-    // headingDiv.style.flexDirection = 'row'
     headingDiv.classList.add('pub-name')
     headingDiv.id = 'pub' + pub.id
     return headingDiv
@@ -83,7 +81,6 @@ PubListView.prototype = {
   },
 
   dropDownInfo: function(pub,div){
-    
     var headingDiv = document.querySelectorAll('.pub-name')
     console.log(headingDiv)
     var correctHeading
@@ -94,13 +91,16 @@ PubListView.prototype = {
     }.bind(this))
     console.log('correct heading', correctHeading)
    
-    
+   if (correctHeading.childNodes.length <= 2){
     this.createImgLink(div, pub)
     this.createAddressParagraph(div, pub)
     this.createOpeningHoursList(div, pub)
     this.createReviewList(div, pub)
     
     correctHeading.appendChild(div)
+   }
+    
+    
   },
 
   removeDropDownInfo: function(div){
