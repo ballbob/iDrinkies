@@ -45,7 +45,7 @@ MapWrapper.prototype = {
     var windowContents = '<div>' + 
     '<h3>' + pub.name + '</h3>' +
     '<p>' + pub.address + '</p>' +
-    '<img src="' + pub.img + '">' +
+    '<img src="' + pub.img + '" width="200">' +
     '</div>'
 
     //create the info window and put your details into it 
