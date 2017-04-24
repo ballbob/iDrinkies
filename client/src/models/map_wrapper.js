@@ -7,7 +7,11 @@ var MapWrapper = function ( container , coords , zoom ) {
   var boxElement = document.querySelector('#search-box')
 
   //make the box with your parameters
-  this.searchBox = new google.maps.places.SearchBox(boxElement)
+  var customBounds = new google.maps.LatLngBounds(
+    new google.maps.LatLng(55.939268, -3.210454),
+    new google.maps.LatLng(55.953758, -3.179555))
+
+  this.searchBox = new google.maps.places.SearchBox(boxElement, {bounds: customBounds})
 
   this.searchBox.addListener('places_changed', function(){
     var selections = this.searchBox.getPlaces()
