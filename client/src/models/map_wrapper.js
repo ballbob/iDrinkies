@@ -27,7 +27,7 @@ MapWrapper.prototype = {
     return marker;
   },
 
-  addPubMarker: function (coords ) {
+  addPubMarker: function (pubName, coords ) {
     var marker = new google.maps.Marker({
       position: coords,
       map: this.googlemap,
@@ -39,6 +39,16 @@ MapWrapper.prototype = {
         fillOpacity: 1.0
       }
     });
+    //add the info window. First, define what goes inside the info window div
+    var windowContents = '<div>' + '<p>Name: ' + pubName + '</p></div>'
+
+    var pubInfo = new google.maps.InfoWindow({content: windowContents})
+
+    marker.addListener('click',function(){
+      pubInfo.open(this.googlemap, marker)
+    })
+
+    //return the marker
     return marker;
   },
 
@@ -74,9 +84,13 @@ MapWrapper.prototype = {
     pubGetter = new PubGet("http://localhost:3000/api/pubs")
     pubGetter.getData(function(pubs){
       for (i=0; i<pubs.length; i++){
-        this.addPubMarker({
-          lat: pubs[i].latlng[0],
-          lng: pubs[i].latlng[1],
+
+        //add the markers. the info window is made with them
+        var pubMarker = this.addPubMarker(
+          pubs[i].name,
+          {
+            lat: pubs[i].latlng[0],
+            lng: pubs[i].latlng[1],
           })
       }
     }.bind(this))
