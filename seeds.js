@@ -123,7 +123,7 @@ db.pubs.insert([
     cc_ranking: 6,
     review: "Traditional independent bar with a good selection of real ales, not alot of space if you are with a larger group, but cozy",
     special_events: ["Home of the Edinburgh Rum Club"],
-    img: "https://goo.gl/maps/SpPGJedGqwG2",
+    img: "/blueblazer.jpg",
   },
 
   {
