@@ -47,9 +47,11 @@ PubListView.prototype = {
 
   getPubHeader: function(pub){
     var headingDiv = document.createElement('div')
+    console.log(headingDiv)
     headingDiv.style.display = 'flex'
     headingDiv.style.flexDirection = 'row'
     headingDiv.classList.add('pub-name')
+    headingDiv.id = 'p' + pub.id
     return headingDiv
   },
 
@@ -62,6 +64,8 @@ PubListView.prototype = {
 
   createNameParagraph: function(div, pub){
     var headingDiv = this.getPubHeader(pub)
+    console.log(pub.id.toString())
+    
     var pubName = this.getPubNameTitle(pub)
     var dropDownArrow = this.getDropDownArrow(pub)
 
@@ -79,6 +83,8 @@ PubListView.prototype = {
   },
 
   dropDownInfo: function(pub,div){
+    var pubid = '#p' + pub.id
+    var headingDiv = document.querySelector(pubid)
     console.log('drop down info function called')
     console.log('pub', pub)
     console.log('div', div)
@@ -86,7 +92,7 @@ PubListView.prototype = {
     this.createAddressParagraph(div, pub)
     this.createOpeningHoursList(div, pub)
     this.createReviewList(div, pub)
-    this.listElement.appendChild(div)
+    this.headingDiv.appendChild(div)
   },
 
   removeDropDownInfo: function(div){
