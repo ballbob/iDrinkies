@@ -42,16 +42,16 @@ PubListView.prototype = {
     dropDownArrow.src = 'dropdown_arrow.png'
     dropDownArrow.style.backgroundColor = 'white'
     dropDownArrow.style.height = '20px'
+    dropDownArrow.style.width = '20px'
     return dropDownArrow
   },
 
   getPubHeader: function(pub){
     var headingDiv = document.createElement('div')
-    console.log(headingDiv)
-    headingDiv.style.display = 'flex'
-    headingDiv.style.flexDirection = 'row'
+    // headingDiv.style.display = 'flex'
+    // headingDiv.style.flexDirection = 'row'
     headingDiv.classList.add('pub-name')
-    headingDiv.id = 'p' + pub.id
+    headingDiv.id = 'pub' + pub.id
     return headingDiv
   },
 
@@ -73,7 +73,7 @@ PubListView.prototype = {
       if (div.childNodes.length <= 2){
         this.dropDownInfo(pub,div)      
       } else {
-          this.removeDropDownInfo(div)
+        this.removeDropDownInfo(div)
         }
       }.bind(this))
       
@@ -83,16 +83,24 @@ PubListView.prototype = {
   },
 
   dropDownInfo: function(pub,div){
-    var pubid = '#p' + pub.id
-    var headingDiv = document.querySelector(pubid)
-    console.log('drop down info function called')
-    console.log('pub', pub)
-    console.log('div', div)
+    
+    var headingDiv = document.querySelectorAll('.pub-name')
+    console.log(headingDiv)
+    var correctHeading
+    headingDiv.forEach(function(individualDiv){
+      if (individualDiv.id === ('pub' + pub.id)){
+        correctHeading = individualDiv
+      }
+    }.bind(this))
+    console.log('correct heading', correctHeading)
+   
+    
     this.createImgLink(div, pub)
     this.createAddressParagraph(div, pub)
     this.createOpeningHoursList(div, pub)
     this.createReviewList(div, pub)
-    this.headingDiv.appendChild(div)
+    
+    correctHeading.appendChild(div)
   },
 
   removeDropDownInfo: function(div){
