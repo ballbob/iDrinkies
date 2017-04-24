@@ -86,8 +86,6 @@ MapWrapper.prototype = {
   search: function(searchChoices, callback, map){
     var placesFinder = new google.maps.places.PlacesService(this.googlemap)
 
-    var currentLocation = this.getCurrentPosition()
-
     var lat = searchChoices[0].geometry.location.lat()
     var lng = searchChoices[0].geometry.location.lng()
 
