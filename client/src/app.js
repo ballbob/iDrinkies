@@ -1,6 +1,7 @@
 var PubGet = require('./models/pub_getter.js')
 var PubListView = require('./views/pub_list_view.js')
 var MapWrapper = require("./models/map_wrapper.js")
+var DistanceCalculator = require("./models/distance_calculator.js")
 var MapView = require("./views/map_view.js")
 
 var app = function(){
@@ -26,6 +27,9 @@ var app = function(){
     mapView.centerNearMe()
     mapView.mainMap.pubLocationMarkers()
   })
+
+  var distanceCalculator = new DistanceCalculator()
+  distanceCalculator.calculateDistance({lat: 55.953251, lng: -3.188267}, {lat: 55.865101, lng: -4.433177})
 
 }
 
