@@ -21,7 +21,7 @@ var app = function(){
   //get your data and render it
   pubGetter.getData(function(pubs){
     pubLister.render(pubs)
-    mapView.mainMap.pubLocationMarkers(pubs,distanceCalculator)
+    mapView.mainMap.pubLocationMarkers(pubs,distanceCalculator,pubLister)
   })
 
   //get a reference to the 'near me' button

@@ -1,4 +1,4 @@
-var PubGet = require('./pub_getter.js')
+var PubLister = require('../views/pub_list_view.js')
 
 var MapWrapper = function ( container , coords , zoom ) {
   this.googlemap = new google.maps.Map( container , { center: coords , zoom: zoom })
@@ -31,7 +31,7 @@ MapWrapper.prototype = {
     return marker;
   },
 
-  addPubMarker: function (pub, coords, distanceCalculator ) {
+  addPubMarker: function (pub, coords, distanceCalculator, pubLister ) {
     //create the marker
     var marker = new google.maps.Marker({
       position: coords,
@@ -66,6 +66,9 @@ MapWrapper.prototype = {
 
         marker.addListener('click',function(){
           pubInfo.open(this.googlemap, marker)
+
+          var div = document.createElement('div')
+          pubLister.createNameParagraph(div,pub)
         })
           return marker;
         })
@@ -100,7 +103,7 @@ MapWrapper.prototype = {
     map.setCenter({lat: latitude, lng: longitude})
   },
 
-  pubLocationMarkers: function(pubs,distanceCalculator){
+  pubLocationMarkers: function(pubs,distanceCalculator,pubLister){
     for (i=0; i<pubs.length; i++){
       //add the markers. the info window is made with them
       var pubMarker = this.addPubMarker(
@@ -109,7 +112,8 @@ MapWrapper.prototype = {
           lat: pubs[i].latlng[0],
           lng: pubs[i].latlng[1],
         }, 
-        distanceCalculator
+        distanceCalculator,
+        pubLister
       )
     }
   }
