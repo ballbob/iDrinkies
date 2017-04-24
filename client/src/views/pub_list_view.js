@@ -75,9 +75,9 @@ PubListView.prototype = {
           this.removeDropDownInfo(div)
         }
       }.bind(this))
-      
-    headingDiv.appendChild(pubName)
+
     headingDiv.appendChild(dropDownArrow)
+    headingDiv.appendChild(pubName)
     div.appendChild(headingDiv)
   },
 
