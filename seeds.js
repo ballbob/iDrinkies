@@ -271,7 +271,7 @@ db.pubs.insert([
   name: "The Old Brewery",
   phone: "01259 722722",
   address: "20 E Vennel, Alloa FK10 1ED",
-  latlng: [56.1148523, 3.7950386],
+  latlng: [56.1148523, -3.7950386],
   opening_hours: {
     monday: "11am - 11pm",
     tuesday: "11am - 11pm",
@@ -291,7 +291,7 @@ db.pubs.insert([
   name: "Peppe's Lounge",
   phone: "01259 210706",
   address: "12 Mar Pl, Alloa FK10 2AB",
-  latlng: [56.1170976, 3.7969627],
+  latlng: [56.1170976, -3.7969627],
   opening_hours: {
     monday: "12pm - 11pm",
     tuesday: "12pm - 11pm",
@@ -310,7 +310,7 @@ db.pubs.insert([
   name: "The Espy",
   phone: "0131 669 0082",
   address: "62-64 Bath St, Edinburgh EH15 1HF",
-  latlng: [55.951732, 3.1158213],
+  latlng: [55.9545965,-3.1108181],
   opening_hours: {
     monday: "9am - 1am",
     tuesday: "9am - 1am",
@@ -330,7 +330,7 @@ db.pubs.insert([
   name: "Skylark",
   phone: "0131 629 3037",
   address: "243 Portobello High St, Edinburgh EH15 2AW",
-  latlng: [55.9524196, 3.1136766],
+  latlng: [55.9524196, -3.1136766],
   opening_hours: {
     monday: "10am - 5pm",
     tuesday: "10am - 5pm",

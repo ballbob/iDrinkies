@@ -40,7 +40,10 @@ MapWrapper.prototype = {
       }
     });
     //add the info window. First, define what goes inside the info window div
-    var windowContents = '<div>' + '<p>Name: ' + pubName + '</p></div>'
+    var windowContents = '<div>' + 
+    '<p>Name: ' + pubName + '</p>' +
+    
+    '</div>'
 
     var pubInfo = new google.maps.InfoWindow({content: windowContents})
 
