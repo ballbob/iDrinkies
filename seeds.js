@@ -104,7 +104,7 @@ db.pubs.insert([
     cc_ranking: 8,
     review: "Great selection of beers, really unique flavours not found elsewhere, no full pints though, expensive",
     special_events: ["From IPA days, blind beer boards and many more. some planned, some very last minute - and not forgetting our monthy meet the brewer."],
-    img: "https://goo.gl/maps/zapacbfpkd22",
+    img: "/hangingbat.jpg",
   },
 
   {
