@@ -18,7 +18,7 @@ var MapWrapper = function ( container , coords , zoom ) {
 
 MapWrapper.prototype = {
 
-  addMarker: function (option, coords ) {
+  addMarker: function (coords ) {
     var marker = new google.maps.Marker({
       position: coords,
       map: this.googlemap,
@@ -34,7 +34,9 @@ MapWrapper.prototype = {
       animation: google.maps.Animation.DROP,
       icon: {
         path: google.maps.SymbolPath.CIRCLE,
-        scale: 10
+        scale: 5,
+        fillColor: 'red',
+        fillOpacity: 1.0
       }
     });
     return marker;
@@ -48,7 +50,7 @@ MapWrapper.prototype = {
           lng: position.coords.longitude
         };
       this.googlemap.setCenter( crds );
-      this.addMarker('red', crds );
+      this.addMarker(crds );
     }.bind(this));
   }
 },
