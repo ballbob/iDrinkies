@@ -27,7 +27,7 @@ MapWrapper.prototype = {
     return marker;
   },
 
-  addPubMarker: function (pub, coords ) {
+  addPubMarker: function (pub, coords, distanceCalculator ) {
     //create the marker
     var marker = new google.maps.Marker({
       position: coords,
@@ -40,24 +40,34 @@ MapWrapper.prototype = {
         fillOpacity: 1.0
       }
     });
+    
+    //get current position
+    navigator.geolocation.getCurrentPosition(function ( position ) {
+        var currentLocation = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+      }
 
-    //add the info window. First, define what goes inside the info window div
-    var windowContents = '<div>' + 
-    '<h3>' + pub.name + '</h3>' +
-    '<p>' + pub.address + '</p>' +
-    '<img src="' + pub.img + '" width="200">' +
-    '</div>'
+      distanceCalculator.calculateDistance(currentLocation, coords, function(distance){
+      
+      //add the info window. First, define what goes inside the info window div  
+        var windowContents = '<div>' + 
+        '<h3>' + pub.name + '</h3>' + 
+        '<p>Distance from you: ' + distance + '</p>' +
+        '<p>' + pub.address + '</p>' +
+        '<img src="' + pub.img + '" width="200">' +
+        '</div>'
 
-    //create the info window and put your details into it 
-    var pubInfo = new google.maps.InfoWindow({content: windowContents})
+        var pubInfo = new google.maps.InfoWindow({content: windowContents})
 
-    //set the info window to come up when clicked
-    marker.addListener('click',function(){
-      pubInfo.open(this.googlemap, marker)
-    })
+        marker.addListener('click',function(){
+          pubInfo.open(this.googlemap, marker)
+        })
+          return marker;
+        })
 
-    //return the marker
-    return marker;
+    }.bind(this))
+
   },
 
   geolocate: function () {
@@ -88,7 +98,7 @@ MapWrapper.prototype = {
     map.setCenter({lat: latitude, lng: longitude})
   },
 
-  pubLocationMarkers: function(){
+  pubLocationMarkers: function(distanceCalculator){
     pubGetter = new PubGet("http://localhost:3000/api/pubs")
     pubGetter.getData(function(pubs){
       for (i=0; i<pubs.length; i++){
@@ -99,7 +109,7 @@ MapWrapper.prototype = {
           {
             lat: pubs[i].latlng[0],
             lng: pubs[i].latlng[1],
-          })
+          }, distanceCalculator)
       }
     }.bind(this))
   }

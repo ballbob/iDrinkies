@@ -2,7 +2,7 @@ var DistanceCalculator = function(){
 }
 
 DistanceCalculator.prototype = {
-  calculateDistance: function(originCoords, destinationCoords){
+  calculateDistance: function(originCoords, destinationCoords, callback){
     var service = new google.maps.DistanceMatrixService()
 
     service.getDistanceMatrix({
@@ -12,9 +12,12 @@ DistanceCalculator.prototype = {
         var origins = response.originAddresses;
         var destinations = response.destinationAddresses;
         var distance = response.rows[0].elements[0].distance.text
-        console.log(distance)
         
-        //ADD A CALLBACK TO PARAMS, AND CALL IT NOW WITH THE DISTANCE INFO
+
+        //callback is the add marker info window function - this provides distance to it
+        callback(distance)
+        
+        
     })
   }
 }
