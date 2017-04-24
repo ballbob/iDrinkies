@@ -100,20 +100,18 @@ MapWrapper.prototype = {
     map.setCenter({lat: latitude, lng: longitude})
   },
 
-  pubLocationMarkers: function(distanceCalculator){
-    pubGetter = new PubGet("http://localhost:3000/api/pubs")
-    pubGetter.getData(function(pubs){
-      for (i=0; i<pubs.length; i++){
-
-        //add the markers. the info window is made with them
-        var pubMarker = this.addPubMarker(
-          pubs[i],
-          {
-            lat: pubs[i].latlng[0],
-            lng: pubs[i].latlng[1],
-          }, distanceCalculator)
-      }
-    }.bind(this))
+  pubLocationMarkers: function(pubs,distanceCalculator){
+    for (i=0; i<pubs.length; i++){
+      //add the markers. the info window is made with them
+      var pubMarker = this.addPubMarker(
+        pubs[i],
+        {
+          lat: pubs[i].latlng[0],
+          lng: pubs[i].latlng[1],
+        }, 
+        distanceCalculator
+      )
+    }
   }
 
 }
