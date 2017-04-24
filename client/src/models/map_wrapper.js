@@ -18,11 +18,24 @@ var MapWrapper = function ( container , coords , zoom ) {
 
 MapWrapper.prototype = {
 
-  addMarker: function ( coords ) {
+  addMarker: function (option, coords ) {
     var marker = new google.maps.Marker({
       position: coords,
       map: this.googlemap,
       animation: google.maps.Animation.DROP
+    });
+    return marker;
+  },
+
+  addPubMarker: function (coords ) {
+    var marker = new google.maps.Marker({
+      position: coords,
+      map: this.googlemap,
+      animation: google.maps.Animation.DROP,
+      icon: {
+        path: google.maps.SymbolPath.CIRCLE,
+        scale: 10
+      }
     });
     return marker;
   },
@@ -35,7 +48,7 @@ MapWrapper.prototype = {
           lng: position.coords.longitude
         };
       this.googlemap.setCenter( crds );
-      this.addMarker( crds );
+      this.addMarker('red', crds );
     }.bind(this));
   }
 },
@@ -59,7 +72,7 @@ MapWrapper.prototype = {
     pubGetter = new PubGet("http://localhost:3000/api/pubs")
     pubGetter.getData(function(pubs){
       for (i=0; i<pubs.length; i++){
-        this.addMarker({
+        this.addPubMarker({
           lat: pubs[i].latlng[0],
           lng: pubs[i].latlng[1],
           })
