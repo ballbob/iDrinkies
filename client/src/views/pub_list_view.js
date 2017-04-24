@@ -39,6 +39,7 @@ PubListView.prototype = {
   getDropDownArrow: function(pub){
     var dropDownArrow = document.createElement('img')
     dropDownArrow.id = pub.id
+    dropDownArrow.classList.add('dropdownarrow')
     dropDownArrow.src = 'dropdown_arrow.png'
     dropDownArrow.style.backgroundColor = 'white'
     dropDownArrow.style.height = '20px'
@@ -98,7 +99,9 @@ PubListView.prototype = {
     this.createReviewList(div, pub)
     
     correctHeading.appendChild(div)
-   }
+  } else {
+    this.removeDropDownInfo(correctHeading)
+  }
     
     
   },
