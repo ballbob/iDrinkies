@@ -1,83 +1,102 @@
 body {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: auto;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.75) 20%, rgba(0, 0, 0, 0.9) 100%), url('bubbles.png') repeat;
-  background-size: auto;
-  justify-content: center;
+  flex-direction: column;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 59%, rgba(0, 0, 0, 1) 100%), url('bubbles.png') no-repeat;  background-repeat: repeat;
   font-family: sans-serif;
-  font-size: 1em;
+  color: white;
 }
 
 a {
+  font-size: 1.5em;
   color: yellow;
-  font-size: 1.25em;
   text-shadow: 2px 2px 1px black;
 }
 
 header {
-  font-family: sans-serif;
-  background-color: darkorange;
+  display: flex;
+  flex-direction: row;
+  text-shadow: 2px 2px 1px black;
+  font-family: 'Love Ya Like A Sister', cursive;
+  font-size: 20px;
 }
 
-#near-me-button {
-  color: white;
-  text-shadow: 1px 1px 1px black;
-  font-family: sans-serif;
-  background-color: darkorange;
-  font-size: 1em;
-  width: 500px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+section {
+  text-shadow: 2px 2px 1px black;
+}
+
+#main-container {
+  display: flex;
+  flex-direction: row;
 }
 
 main {
-  font-size: 1em;
-  justify-content: center;
-  margin: auto;
-}
-
-#map {
-  width: 500px;
-  height: 500px;
-}
-
-nav {
-  font-size: 1em;
-  font-family: sans-serif;
-  background-color: darkorange;
-  justify-content: center;
-  margin: auto;
-}
-
-#submit-button {
-  color: white;
-  text-shadow: 1px 1px 1px black;
-  font-family: sans-serif;
-  background-color: darkorange;
-  font-size: 1em;
-  width: 185px;
-  padding-top: 1px;
-  padding-bottom: 1px;
-}
-
-#search-box {
-  width: 490px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
-#content-block {
+  width: 600px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
-#pub-list {
+#map-controls {
+  width: inherit;
+  display: flex;
+  flex-direction: row;
+}
+
+#map-content {
+  width: 600px;
+  height: 600px;
+}
+
+#list-container {
+  width: 600px;
+}
+
+#list-content {
+  width: 600px;
+  height: 600px;
+  overflow: scroll;
+  background-color: rgba(200, 100, 0, 0.5);
+}
+
+#list-title {
+  background-color: darkorange;
+  align-content: center;
+}
+
+p {
+  font-size: 1.5em;
+  padding: 8.25px;
+  margin: 0;
+  background-color: darkorange;
+  text-align: center;
+  text-shadow: 2px 2px 1px black;
+}
+
+button {
+  width: 600px;
+  margin: 0;
+  height: 41px;
+  border-width: thick;
+  border-radius: 0px;
+  border-color: darkorange;
+  background-color: darkorange;
+  font-size: 1.5em;
   color: white;
-  width: 500px;
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  text-shadow: 2px 2px 2px black;
+  text-shadow: 2px 2px 1px black;
+}
+
+input {
+  width: 588px;
+  font-size: 1.5em;
+  border-color: darkorange;
+  border-width: thick;
+}
+
+#logo {
+  height: 150px;
+  width: 150px;
+}
+
+footer {
+  width: 1200px;
+  text-shadow: 2px 2px 1px black;
 }

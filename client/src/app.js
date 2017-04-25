@@ -9,7 +9,7 @@ var app = function(){
   var pubGetter = new PubGet("http://localhost:3000/api/pubs")
 
   //set up your document element with the DOM to make your view
-  var pubListElement = document.querySelector('#pub-list')
+  var pubListElement = document.querySelector('#list-content')
   var pubLister = new PubListView(pubListElement)
 
   //get your data and render it
@@ -23,12 +23,7 @@ var app = function(){
 
   var distanceCalculator = new DistanceCalculator()
   //get a reference to the 'near me' button
-<<<<<<< HEAD
   var nearMeButton = document.querySelector('#map-button')
-=======
-  var nearMeButton = document.querySelector('#near-me-button')
-
->>>>>>> develop
   nearMeButton.addEventListener('click', function(){
     mapView.centerNearMe()
     mapView.mainMap.pubLocationMarkers(distanceCalculator)
