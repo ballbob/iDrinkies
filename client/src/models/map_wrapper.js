@@ -66,28 +66,17 @@ MapWrapper.prototype = {
         var pubInfo = new google.maps.InfoWindow({content: windowContents})
 
         marker.addListener('click', function(){
-<<<<<<< HEAD
-          console.log('dropdown listener activated')
 
-          // var div = document.querySelector('#pub-list')
-          // var pubDiv = document.createElement('div')
 
           var allPubDivs = document.querySelectorAll('.pub-div')
           console.log('all', allPubDivs)
           var correctDiv
-=======
-          
-          var allPubDivs = document.querySelectorAll('.pub-div')
-          console.log('all', allPubDivs)
-          var correctDiv 
->>>>>>> parent of 0fb0679... Revert "Merge branch 'develop' into feature/css"
           allPubDivs.forEach(function(div){
             if (div.id === 'pub-entry' + pub.id){
               correctDiv = div
             }
           }.bind(this))
 
-<<<<<<< HEAD
           console.log(correctDiv)
 
           if (correctDiv.childNodes.length <= 2){
@@ -96,15 +85,6 @@ MapWrapper.prototype = {
             pubLister.removeDropDownInfo(correctDiv)
           }
 
-=======
-          
-          if (correctDiv.childNodes.length <= 2){
-            pubLister.dropDownInfo(pub,correctDiv)      
-          } else {
-            pubLister.removeDropDownInfo(correctDiv)
-          }
-        
->>>>>>> parent of 0fb0679... Revert "Merge branch 'develop' into feature/css"
         })
 
         marker.addListener('click',function(){
@@ -151,7 +131,7 @@ MapWrapper.prototype = {
         {
           lat: pubs[i].latlng[0],
           lng: pubs[i].latlng[1],
-        }, 
+        },
         distanceCalculator,
         pubLister
       )

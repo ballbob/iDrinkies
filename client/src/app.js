@@ -25,12 +25,9 @@ var app = function(){
   })
 
   //get a reference to the 'near me' button
-<<<<<<< HEAD
-  var nearMeButton = document.querySelector('#map-button')
-=======
-  var nearMeButton = document.querySelector('#near-me-button')
 
->>>>>>> develop
+  var nearMeButton = document.querySelector('#map-button')
+
   nearMeButton.addEventListener('click', function(){
     mapView.centerNearMe()
   })
