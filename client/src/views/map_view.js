@@ -8,7 +8,7 @@ var MapView = function () {
 MapView.prototype = {
 
   initialize: function () {
-    var mapSection = document.getElementById('map-content');
+    var mapSection = document.getElementById('map');
     var center = { lat: 0 , lng: 0 }
     this.mainMap = new MapWrapper( mapSection, center, 16 );
     this.mainMap.geolocate(); 
