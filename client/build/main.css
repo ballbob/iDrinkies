@@ -9,21 +9,22 @@ body {
 }
 
 h1 {
-  font-size: 125px;
+  font-size: 8em;
   margin: 0;
+  text-shadow: 3px 3px 1px #ff3300;
 }
 
 h2 {
-  font-size: 55px;
+  font-size: 3.25em;
   margin: auto;
   font-family: 'Love Ya Like A Sister', cursive;
+  text-shadow: 3px 3px 1px #ff3300;
   text-align: center;
 }
 
 header {
   display: flex;
   flex-direction: row;
-  text-shadow: 2px 2px 1px black;
   margin: auto;
   font-family: 'Love Ya Like A Sister', cursive;
 }
@@ -56,7 +57,7 @@ main {
   overflow: scroll;
   background-color: rgba(255, 204, 153, 0.5);
   font-size: 1.25em;
-  text-shadow: 2px 2px 1px black;
+  text-shadow: 2px 2px black;
 }
 
 #list-title {
@@ -68,9 +69,9 @@ main {
   font-size: 1.25em;
   padding: 10.25px;
   margin: 0;
-  background-image: linear-gradient( to right , #ffcc00 , #ff6600 , #ff6600 );
+  background-image: linear-gradient( to right , #ff9933 , #ff6600 );
   text-align: center;
-  text-shadow: 1px 1px 1px black;
+  text-shadow: 2px 2px black;
   border-radius: thick;
 }
 
@@ -78,9 +79,9 @@ main {
   font-size: 1.25em;
   padding: 10.25px;
   margin: 0;
-  background-image: linear-gradient( to right , #ffcc00 , #ff6600 , #ff6600 );
+  background-image: linear-gradient( to right , #ff9933 , #ff6600 );
   text-align: center;
-  text-shadow: 1px 1px 1px black;
+  text-shadow: 2px 2px black;
   border-radius: thick;
 }
 
@@ -88,9 +89,9 @@ main {
   font-size: 1.25em;
   padding: 10.25px;
   margin: 0;
-  background-image: linear-gradient( to right , #ffcc00 , #ff6600 , #ff6600 );
+  background-image: linear-gradient( to right , #ff9933 , #ff6600 );
   text-align: center;
-  text-shadow: 1px 1px 1px black;
+  text-shadow: 2px 2px black;
   border-radius: thick;
 }
 
@@ -101,10 +102,10 @@ button {
   border-width: thick;
   border-radius: 0px;
   border-color: #ff6600;
-  background-image: linear-gradient( to right, #ffcc00 , #ff6600 , #ff6600 );
+  background-image: linear-gradient( to right, #ff9933 , #ff6600 );
   font-size: 1.25em;
   color: white;
-  text-shadow: 1px 1px 1px black;
+  text-shadow: 2px 2px black;
 }
 
 input {
