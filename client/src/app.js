@@ -9,7 +9,7 @@ var app = function(){
   var pubGetter = new PubGet("http://localhost:3000/api/pubs")
 
   //set up your document element with the DOM to make your view
-  var pubListElement = document.querySelector('#pub-list')
+  var pubListElement = document.querySelector('#list-content')
   var pubLister = new PubListView(pubListElement)
 
   //get the map and render to screen
