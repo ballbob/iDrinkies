@@ -65,11 +65,7 @@ MapWrapper.prototype = {
         var pubInfo = new google.maps.InfoWindow({content: windowContents})
 
         marker.addListener('click', function(){
-          console.log('dropdown listener activated')
           
-          // var div = document.querySelector('#pub-list')
-          // var pubDiv = document.createElement('div')
-
           var allPubDivs = document.querySelectorAll('.pub-div')
           console.log('all', allPubDivs)
           var correctDiv 
@@ -79,7 +75,6 @@ MapWrapper.prototype = {
             }
           }.bind(this))
 
-          console.log(correctDiv)
           
           if (correctDiv.childNodes.length <= 2){
             pubLister.dropDownInfo(pub,correctDiv)      
