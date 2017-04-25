@@ -65,6 +65,31 @@ MapWrapper.prototype = {
 
         var pubInfo = new google.maps.InfoWindow({content: windowContents})
 
+        marker.addListener('click', function(){
+          console.log('dropdown listener activated')
+
+          // var div = document.querySelector('#pub-list')
+          // var pubDiv = document.createElement('div')
+
+          var allPubDivs = document.querySelectorAll('.pub-div')
+          console.log('all', allPubDivs)
+          var correctDiv
+          allPubDivs.forEach(function(div){
+            if (div.id === 'pub-entry' + pub.id){
+              correctDiv = div
+            }
+          }.bind(this))
+
+          console.log(correctDiv)
+
+          if (correctDiv.childNodes.length <= 2){
+            pubLister.dropDownInfo(pub,correctDiv)
+          } else {
+            pubLister.removeDropDownInfo(correctDiv)
+          }
+
+        })
+
         marker.addListener('click',function(){
           pubInfo.open(this.googlemap, marker)
         })
