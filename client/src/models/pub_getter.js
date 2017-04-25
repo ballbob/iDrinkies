@@ -1,6 +1,5 @@
 var Pub = require('./pub.js')
 
-
 var PubGet = function(url){
   this.url = url
   this.pubs = []

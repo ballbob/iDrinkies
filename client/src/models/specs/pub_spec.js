@@ -7,7 +7,7 @@ describe('Pub tests: ', function(){
 
   beforeEach(function(){
     pub = new Pub({
-      name: 'Happy Fun Pub', 
+      name: 'Happy Fun Pub',
       phoneNo:'0131 555 555',
       address: '13 Castle Terrace',
       latlng: [555, 444],
@@ -75,6 +75,5 @@ describe('Pub tests: ', function(){
   it('has an image url', function(){
     assert.strictEqual('imgurl', pub.img)
   })
-
 
 })

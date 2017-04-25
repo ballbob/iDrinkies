@@ -26,7 +26,6 @@ var MapWrapper = function ( container , coords , zoom ) {
 
 MapWrapper.prototype = {
 
-
 //////MARKERS
 
 //the 'you are here' marker
@@ -62,7 +61,7 @@ MapWrapper.prototype = {
         lng: position.coords.longitude
       }
 
-      //make your distance calculator 
+      //make your distance calculator
       distanceCalculator.calculateDistance(currentLocation, coords, function(distance){
 
       //populate the info window for the pub. First, define what goes inside the info window div
@@ -73,14 +72,14 @@ MapWrapper.prototype = {
       '<img src="' + pub.img + '" width="200">' +
       '</div>'
 
-      //create the pub info window 
+      //create the pub info window
       var pubInfo = new google.maps.InfoWindow({content: windowContents})
 
       //add the listener for the pub info window's creation to the pub's marker
       marker.addListener('click', function(){
         var allPubDivs = document.querySelectorAll('.pub-div')
         var correctDiv
-        
+
         //set the div for each pubs
         allPubDivs.forEach(function(div){
           //first check that you've got the right pub
