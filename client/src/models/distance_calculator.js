@@ -12,15 +12,12 @@ DistanceCalculator.prototype = {
         var origins = response.originAddresses;
         var destinations = response.destinationAddresses;
         var distance = response.rows[0].elements[0].distance.text
-        
 
         //callback is the add marker info window function - this provides distance to it
         callback(distance)
-        
-        
+
     })
   }
 }
-
 
 module.exports = DistanceCalculator

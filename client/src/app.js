@@ -12,17 +12,9 @@ var app = function(){
   var pubListElement = document.querySelector('#list-content')
   var pubLister = new PubListView(pubListElement)
 
-
-  //get your data and render it
-  // pubGetter.getData(function(pubs){
-  //   pubLister.render(pubs)
-  // })
-
-
   //get the map and render to screen
   var mapView = new MapView()
   mapView.initialize()
-
 
   var distanceCalculator = new DistanceCalculator()
 
@@ -39,8 +31,6 @@ var app = function(){
   nearMeButton.addEventListener('click', function(){
     mapView.centerNearMe()
   })
-
-
 
 }
 
