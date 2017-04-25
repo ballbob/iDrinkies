@@ -8,32 +8,24 @@ body {
   color: white;
 }
 
-a {
-  font-size: 1.5em;
-  color: yellow;
-  text-shadow: 2px 2px 1px black;
-}
-
 h1 {
-  font-size: 80px;
+  font-size: 125px;
   margin: 0;
 }
 
 h2 {
-  font-size: 40px;
-  margin: 0;
+  font-size: 55px;
+  margin: auto;
+  font-family: 'Love Ya Like A Sister', cursive;
+  text-align: center;
 }
 
 header {
   display: flex;
   flex-direction: row;
   text-shadow: 2px 2px 1px black;
-  font-family: 'Love Ya Like A Sister', cursive;
   margin: auto;
-}
-
-section {
-  text-shadow: 2px 2px 1px black;
+  font-family: 'Love Ya Like A Sister', cursive;
 }
 
 #main-container {
@@ -64,6 +56,7 @@ main {
   overflow: scroll;
   background-color: rgba(255, 204, 153, 0.5);
   font-size: 1.25em;
+  text-shadow: 2px 2px 1px black;
 }
 
 #list-title {
