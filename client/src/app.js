@@ -12,6 +12,7 @@ var app = function(){
   var pubListElement = document.querySelector('#list-content')
   var pubLister = new PubListView(pubListElement)
 
+
   //get your data and render it
   pubGetter.getData(function(pubs){
     pubLister.render(pubs)
@@ -24,14 +25,22 @@ var app = function(){
 
 
   var distanceCalculator = new DistanceCalculator()
-  //get a reference to the 'near me' button
-  var nearMeButton = document.querySelector('#near-me-button')
-  nearMeButton.addEventListener('click', function(){
-    mapView.centerNearMe()
-    mapView.mainMap.pubLocationMarkers(distanceCalculator)
+
+  //get your data and render it
+  pubGetter.getData(function(pubs){
+    pubLister.render(pubs)
+    mapView.mainMap.pubLocationMarkers(pubs,distanceCalculator,pubLister)
   })
 
-  
+  //get a reference to the 'near me' button
+
+  var nearMeButton = document.querySelector('#near-me-button')
+
+  nearMeButton.addEventListener('click', function(){
+    mapView.centerNearMe()
+  })
+
+
 
 }
 
