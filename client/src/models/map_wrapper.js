@@ -1,4 +1,4 @@
-var PubGet = require('./pub_getter.js')
+var PubLister = require('../views/pub_list_view.js')
 
 var MapWrapper = function ( container , coords , zoom ) {
   this.googlemap = new google.maps.Map( container , { center: coords , zoom: zoom })
@@ -31,7 +31,7 @@ MapWrapper.prototype = {
     return marker;
   },
 
-  addPubMarker: function (pub, coords, distanceCalculator ) {
+  addPubMarker: function (pub, coords, distanceCalculator, pubLister ) {
     //create the marker
     var marker = new google.maps.Marker({
       position: coords,
@@ -63,6 +63,21 @@ MapWrapper.prototype = {
         '</div>'
 
         var pubInfo = new google.maps.InfoWindow({content: windowContents})
+
+        marker.addListener('click', function(){
+          console.log('dropdown listener activated')
+          
+          var div = document.querySelector('#pub-list')
+          var pubDiv = document.createElement('div')
+          
+          if (pubDiv.childNodes.length <= 2){
+            console.log('child nodes less than 2')
+            pubLister.dropDownInfo(pub,pubDiv)      
+          } else {
+            pubLister.removeDropDownInfo(pubDiv)
+          }
+        
+        })
 
         marker.addListener('click',function(){
           pubInfo.open(this.googlemap, marker)
@@ -100,20 +115,19 @@ MapWrapper.prototype = {
     map.setCenter({lat: latitude, lng: longitude})
   },
 
-  pubLocationMarkers: function(distanceCalculator){
-    pubGetter = new PubGet("http://localhost:3000/api/pubs")
-    pubGetter.getData(function(pubs){
-      for (i=0; i<pubs.length; i++){
-
-        //add the markers. the info window is made with them
-        var pubMarker = this.addPubMarker(
-          pubs[i],
-          {
-            lat: pubs[i].latlng[0],
-            lng: pubs[i].latlng[1],
-          }, distanceCalculator)
-      }
-    }.bind(this))
+  pubLocationMarkers: function(pubs,distanceCalculator,pubLister){
+    for (i=0; i<pubs.length; i++){
+      //add the markers. the info window is made with them
+      var pubMarker = this.addPubMarker(
+        pubs[i],
+        {
+          lat: pubs[i].latlng[0],
+          lng: pubs[i].latlng[1],
+        }, 
+        distanceCalculator,
+        pubLister
+      )
+    }
   }
 
 }

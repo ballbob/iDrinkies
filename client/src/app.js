@@ -12,25 +12,25 @@ var app = function(){
   var pubListElement = document.querySelector('#pub-list')
   var pubLister = new PubListView(pubListElement)
 
-  //get your data and render it
-  pubGetter.getData(function(pubs){
-    pubLister.render(pubs)
-  })
-
   //get the map and render to screen
   var mapView = new MapView()
   mapView.initialize()
 
   var distanceCalculator = new DistanceCalculator()
-  //get a reference to the 'near me' button
-  var nearMeButton = document.querySelector('#near-me-button')
-  nearMeButton.addEventListener('click', function(){
-    mapView.centerNearMe()
-    mapView.mainMap.pubLocationMarkers(distanceCalculator)
+
+  //get your data and render it
+  pubGetter.getData(function(pubs){
+    pubLister.render(pubs)
+    mapView.mainMap.pubLocationMarkers(pubs,distanceCalculator,pubLister)
   })
 
-  
-  // distanceCalculator.calculateDistance({lat: 55.953251, lng: -3.188267}, {lat: 55.865101, lng: -4.433177})
+  //get a reference to the 'near me' button
+  var nearMeButton = document.querySelector('#near-me-button')
+
+  nearMeButton.addEventListener('click', function(){
+    mapView.centerNearMe()
+  })
+
 
 }
 
