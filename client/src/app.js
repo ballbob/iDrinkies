@@ -23,18 +23,14 @@ var app = function(){
 
   var distanceCalculator = new DistanceCalculator()
   //get a reference to the 'near me' button
-<<<<<<< HEAD
-  var nearMeButton = document.querySelector('#map-button')
-=======
-  var nearMeButton = document.querySelector('#near-me-button')
 
->>>>>>> develop
+  var nearMeButton = document.querySelector('#near-me-button')
   nearMeButton.addEventListener('click', function(){
     mapView.centerNearMe()
     mapView.mainMap.pubLocationMarkers(distanceCalculator)
   })
 
-  
+
   // distanceCalculator.calculateDistance({lat: 55.953251, lng: -3.188267}, {lat: 55.865101, lng: -4.433177})
 
 }
