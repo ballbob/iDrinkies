@@ -23,7 +23,7 @@ db.pubs.insert([
     cc_ranking: "7/10",
     review: "One of the staff punched me",
     special_events: [],
-    img: "/shakespeare.jpg"
+    img: "/img/shakespeare.jpg"
   },
 
   {
@@ -43,7 +43,7 @@ db.pubs.insert([
     cc_ranking: "10/10",
     review: "Nice cocktails, though there's beer too. - Adam",
     special_events: ["Fierce Beer Tap Takeover - 26th April 2017, 18:30-20:30."],
-    img: "https://lh3.googleusercontent.com/-tJ6DCj89oV4/V8UnwQdnktI/AAAAAAAAaPQ/XYt3BXMYg3suasn-iadwawPIUBArxkjiQCJkC/w408-h229-k-no/"
+    img: "/img/beerkitchen.jpg"
   },
 
   {
@@ -64,7 +64,7 @@ db.pubs.insert([
     cc_ranking: "2/10",
     review: "I'll never, ever go here and never have. - Ewen",
     special_events: [],
-    img: "https://lh6.googleusercontent.com/-Ydw621RpCFw/WIkoaoXvVVI/AAAAAAAABM0/iEH7ZqaMkV8GfrqVSpw46SMymsY5nFJ7wCLIB/w408-h229-k-no/"
+    img: "/img/thecaley.jpg"
   },
 
   {
@@ -85,7 +85,7 @@ db.pubs.insert([
     cc_ranking: "5000",
     review: "It's extinct. - Bob",
     special_events: [],
-    img: "https://upload.wikimedia.org/wikipedia/commons/1/1c/Squirrel_posing.jpg"
+    img: "/img/redsquirrel.jpg"
   },
 
   {
@@ -104,7 +104,7 @@ db.pubs.insert([
     cc_ranking: 8,
     review: "Great selection of beers, really unique flavours not found elsewhere, no full pints though, expensive",
     special_events: ["From IPA days, blind beer boards and many more. some planned, some very last minute - and not forgetting our monthy meet the brewer."],
-    img: "/hangingbat.jpg",
+    img: "/img/hangingbat.jpg",
   },
 
   {
@@ -123,7 +123,7 @@ db.pubs.insert([
     cc_ranking: 6,
     review: "Traditional independent bar with a good selection of real ales, not alot of space if you are with a larger group, but cozy",
     special_events: ["Home of the Edinburgh Rum Club"],
-    img: "/blueblazer.jpg",
+    img: "/img/blueblazer.jpg",
   },
 
   {
@@ -142,7 +142,7 @@ db.pubs.insert([
     cc_ranking: 7,
     review: "Traditional sports bar serving a sizeable menu of pub grub.",
     special_events: ["Can be booked for functions and reserve a table for groups"],
-    img: "/chanter.jpg",
+    img: "/img/chanter.jpg",
   },
 
   {
@@ -163,7 +163,7 @@ db.pubs.insert([
     cc_ranking: 3,
     review: "It's pretty much what you would expect - fine.",
     special_events: ["Sunday to Thursday: 5 o'clock-tails - limited range of cocktails for £4.95 from 5pm."],
-    img: "http://img.static-bookatable.com/498/332/e584b865dee0353198f2752735fab8a4.jpg?404=bat2/404-restaurant.jpgmode=crop"
+    img: "/img/allbarone.jpg"
   },
 
   {
@@ -182,7 +182,7 @@ db.pubs.insert([
     },
     cc_ranking: 6,
     review: "Nice burgers!",
-    img: "http://farm7.static.flickr.com/6209/6128315560_f2fd0abf4a.jpg"
+    img: "/img/lebowskis.png"
   },
 
   {
@@ -202,7 +202,7 @@ db.pubs.insert([
     cc_ranking: 5,
     review: "Good for live music, less for general drinkies - proceed with caution.",
     special_events: ["Live music every night"],
-    img: "https://files.list.co.uk/images/h/henrys-cellar-bar-lst185453.jpg"
+    img: "/img/henryscellarbar.jpg"
 },
 
 {
@@ -222,7 +222,7 @@ db.pubs.insert([
   food_serving_times: "12pm - 9pm",
   cc_ranking: 2,
   review: "It's our most dreaded drinkies spot - Bob",
-  img: "http://s0.geograph.org.uk/geophotos/04/22/66/4226610_ef8f9ef7.jpg"
+  img: "/img/thecamps.jpg"
 },
 
 {
@@ -243,7 +243,7 @@ db.pubs.insert([
   cc_ranking: 6,
   review: "If you have to be in Strathaven, you might as well be here - Leon",
   special_events: ["Tuesday is bingo night"],
-  img: "http://thestrathaven.co.uk/wp-content/uploads/2016/12/IMG_0896-min-1024x683.jpg"
+  img: "/img/strathaven.jpg"
 },
 
 {
@@ -264,7 +264,7 @@ db.pubs.insert([
   cc_ranking: 10,
   review: "You better like it - Bob",
   special_events: ["Cohort 10 drinks and games - Thursday night"],
-  img: "http://thisisgoodwork.org/wp-content/uploads/2015/08/goodwork-southside-social6.jpg"
+  img: "/img/southsidesocial.jpg"
 },
 
 {
@@ -284,7 +284,7 @@ db.pubs.insert([
   food_serving_times: "12pm - 9pm",
   cc_ranking: 5,
   review: "It's in Alloa, but it's safe, I promise - Suzanne",
-  img: "http://jda-design.com.s77306.gridserver.com/wp-content/uploads/2015/03/Old-Brewery-8.jpg"
+  img: "/img/oldbrewery.jpg"
 },
 
 {
@@ -303,7 +303,7 @@ db.pubs.insert([
   },
   cc_ranking: 1,
   review: "A local place, for local people. Do not attempt to enter - Suzanne",
-  img: "http://www.pubsgalore.co.uk/images/display/69001_69500/69016_9dd14b55.jpg?w=2"
+  img: "/img/peppes.jpg"
 },
 
 {
@@ -323,7 +323,7 @@ db.pubs.insert([
   food_serving_times: "10am - 10pm",
   cc_ranking: 8,
   review: "Nice place for a burger and a pint, also a good vantage point for watching doggos run around the beach",
-  img: "https://media-cdn.tripadvisor.com/media/photo-s/02/81/c6/59/filename-05-16-schottland.jpg"
+  img: "/img/espy.jpg"
 },
 
 {
@@ -342,5 +342,5 @@ db.pubs.insert([
   },
   cc_ranking: 4,
   review: "Nice, but pretty posh",
-  img: "http://www.icosis.co.uk/wp-content/uploads/2013/10/4_The_Skylark_Bar_Portobello_Icosis-Architects-e1400075451962.jpg"
+  img: "/img/skylark.jpg"
 }])
