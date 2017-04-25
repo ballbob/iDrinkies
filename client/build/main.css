@@ -1,4 +1,5 @@
 body {
+  width: 100%;
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -28,6 +29,7 @@ header {
   flex-direction: row;
   text-shadow: 2px 2px 1px black;
   font-family: 'Love Ya Like A Sister', cursive;
+  margin: auto;
 }
 
 section {
@@ -38,6 +40,7 @@ section {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin: auto;
 }
 
 main {
@@ -59,7 +62,7 @@ main {
   width: 500px;
   height: 500px;
   overflow: scroll;
-  background-color: rgba(0, 50, 100, 0.5);
+  background-color: rgba(255, 204, 153, 0.5);
   font-size: 1.25em;
 }
 
@@ -68,13 +71,33 @@ main {
   align-content: center;
 }
 
-p {
+#list-name {
   font-size: 1.25em;
   padding: 10.25px;
   margin: 0;
-  background-image: linear-gradient( to right , #ffcc66 , #ff6600 , #ffcc66 );
+  background-image: linear-gradient( to right , #ffcc00 , #ff6600 , #ff6600 );
   text-align: center;
-  text-shadow: 2px 2px 1px black;
+  text-shadow: 1px 1px 1px black;
+  border-radius: thick;
+}
+
+#list-key {
+  font-size: 1.25em;
+  padding: 10.25px;
+  margin: 0;
+  background-image: linear-gradient( to right , #ffcc00 , #ff6600 , #ff6600 );
+  text-align: center;
+  text-shadow: 1px 1px 1px black;
+  border-radius: thick;
+}
+
+#about-box {
+  font-size: 1.25em;
+  padding: 10.25px;
+  margin: 0;
+  background-image: linear-gradient( to right , #ffcc00 , #ff6600 , #ff6600 );
+  text-align: center;
+  text-shadow: 1px 1px 1px black;
   border-radius: thick;
 }
 
@@ -85,10 +108,10 @@ button {
   border-width: thick;
   border-radius: 0px;
   border-color: #ff6600;
-  background-image: linear-gradient( to right, #ffcc66 , #ff6600 , #ffcc66 );
+  background-image: linear-gradient( to right, #ffcc00 , #ff6600 , #ff6600 );
   font-size: 1.25em;
   color: white;
-  text-shadow: 2px 2px 1px black;
+  text-shadow: 1px 1px 1px black;
 }
 
 input {
@@ -102,11 +125,6 @@ input {
 #logo {
   height: 150px;
   width: 150px;
-}
-
-footer {
-  text-shadow: 2px 2px 1px black;
-  width: 500px;
 }
 
 body .pub-name {
