@@ -29,9 +29,9 @@ PubListView.prototype = {
 
   createImgLink: function(div, pub){
     if (pub.img){
-      var pubImg = document.createElement('a')
-      pubImg.href = pub.img
-      pubImg.innerText = "Have a look at " + pub.name
+      var pubImg = document.createElement('img')
+      pubImg.src = pub.img
+      pubImg.width = 200
       div.appendChild(pubImg)
     }
   },
