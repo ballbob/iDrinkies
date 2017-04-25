@@ -6,8 +6,6 @@ PubListView.prototype = {
   render: function(pubs){
     for (var i=0; i<pubs.length; i++){
       var pubDiv = document.createElement('div')
-      pubDiv.classList.add('pub-div')
-      pubDiv.id = 'pub-entry' + pubs[i].id
 
       this.createNameParagraph(pubDiv, pubs[i])
       this.listElement.appendChild(pubDiv)
@@ -31,9 +29,9 @@ PubListView.prototype = {
 
   createImgLink: function(div, pub){
     if (pub.img){
-      var pubImg = document.createElement('img')
-      pubImg.src = pub.img
-      pubImg.width = 200
+      var pubImg = document.createElement('a')
+      pubImg.href = pub.img
+      pubImg.innerText = "Have a look at " + pub.name
       div.appendChild(pubImg)
     }
   },
@@ -41,18 +39,17 @@ PubListView.prototype = {
   getDropDownArrow: function(pub){
     var dropDownArrow = document.createElement('img')
     dropDownArrow.id = pub.id
-    dropDownArrow.classList.add('dropdownarrow')
     dropDownArrow.src = 'dropdown_arrow.png'
     dropDownArrow.style.backgroundColor = 'white'
     dropDownArrow.style.height = '20px'
-    dropDownArrow.style.width = '20px'
     return dropDownArrow
   },
 
   getPubHeader: function(pub){
     var headingDiv = document.createElement('div')
+    headingDiv.style.display = 'flex'
+    headingDiv.style.flexDirection = 'row'
     headingDiv.classList.add('pub-name')
-    headingDiv.id = 'pub' + pub.id
     return headingDiv
   },
 
@@ -65,45 +62,23 @@ PubListView.prototype = {
 
   createNameParagraph: function(div, pub){
     var headingDiv = this.getPubHeader(pub)
-    
     var pubName = this.getPubNameTitle(pub)
     var dropDownArrow = this.getDropDownArrow(pub)
 
     dropDownArrow.addEventListener('click', function(){
       if (div.childNodes.length <= 2){
-        this.dropDownInfo(pub,div)      
-      } else {
-        this.removeDropDownInfo(div)
+          this.createImgLink(div, pub)
+          this.createAddressParagraph(div, pub)
+          this.createOpeningHoursList(div, pub)
+          this.createReviewList(div, pub)
+        } else {
+          this.removeDropDownInfo(div)
         }
       }.bind(this))
 
     headingDiv.appendChild(dropDownArrow)
     headingDiv.appendChild(pubName)
     div.appendChild(headingDiv)
-  },
-
-  dropDownInfo: function(pub,div){
-    var headingDiv = document.querySelectorAll('.pub-name')
-    var correctHeading
-    headingDiv.forEach(function(individualDiv){
-      if (individualDiv.id === ('pub' + pub.id)){
-        correctHeading = individualDiv
-      }
-    }.bind(this))
-    console.log('parent', correctHeading.parentElement)
-   
-   if (correctHeading.parentElement.childNodes.length <= 2){
-    this.createImgLink(div, pub)
-    this.createAddressParagraph(div, pub)
-    this.createOpeningHoursList(div, pub)
-    this.createReviewList(div, pub)
-    
-    // correctHeading.appendChild(div)
-  } else {
-    this.removeDropDownInfo(correctHeading)
-  }
-    
-    
   },
 
   removeDropDownInfo: function(div){
