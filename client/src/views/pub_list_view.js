@@ -6,13 +6,9 @@ PubListView.prototype = {
   render: function(pubs){
     for (var i=0; i<pubs.length; i++){
       var pubDiv = document.createElement('div')
-<<<<<<< HEAD
       pubDiv.classList.add('pub-div')
       pubDiv.id = 'pub-entry' + pubs[i].id
 
-=======
-      
->>>>>>> feature/markers
       this.createNameParagraph(pubDiv, pubs[i])
       this.listElement.appendChild(pubDiv)
     }
@@ -81,10 +77,6 @@ PubListView.prototype = {
         }
       }.bind(this))
 
-<<<<<<< HEAD
-=======
-    headingDiv.appendChild(pubName)
->>>>>>> feature/markers
     headingDiv.appendChild(dropDownArrow)
     headingDiv.appendChild(pubName)
     div.appendChild(headingDiv)

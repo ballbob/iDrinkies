@@ -1,4 +1,3 @@
-<<<<<<< HEAD:client/src/models/map_wrapper.js
 var PubLister = require('../views/pub_list_view.js')
 
 var MapWrapper = function ( container , coords , zoom ) {
@@ -32,15 +31,6 @@ MapWrapper.prototype = {
     });
     return marker;
   },
-=======
-var PlaceMarker = require("./place_marker.js")
-
-var GeoLocate = function ( container , coords , zoom ) {
-  this.googlemap = new google.maps.Map( container , { center: coords , zoom: zoom } );
-}
-
-GeoLocate.prototype = {
->>>>>>> feature/markers:client/src/models/geolocate.js
 
   addPubMarker: function (pub, coords, distanceCalculator, pubLister ) {
     //create the marker
@@ -112,7 +102,6 @@ GeoLocate.prototype = {
           lat: position.coords.latitude,
           lng: position.coords.longitude
         };
-<<<<<<< HEAD:client/src/models/map_wrapper.js
       this.googlemap.setCenter( crds );
       this.addMarker(crds );
     }.bind(this));
@@ -144,15 +133,9 @@ GeoLocate.prototype = {
         distanceCalculator,
         pubLister
       )
-=======
-        var center = {lat: position.coords.latitude , lng: position.coords.longitude};
-        this.googlemap.setCenter( crds );
-        PlaceMarker.addMarker( crds );
-      }.bind(this));
->>>>>>> feature/markers:client/src/models/geolocate.js
     }
   }
 
 }
 
-module.exports = GeoLocate;
+module.exports = MapWrapper;

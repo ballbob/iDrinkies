@@ -1,20 +1,25 @@
 var Pub = require('./pub.js')
 
-var PubGetter = function(url){
+
+var PubGet = function(url){
   this.url = url
   this.pubs = []
 }
 
-PubGetter.prototype = {
-
+PubGet.prototype = {
   getData: function(callback){
-    var request = new XMLHttpRequest() // Start your XMLHttpRequest
-    request.open('GET',this.url) // Get from the URL specified in the constructor
-    request.onload = function(){ // Once that data has been got, put the data into the pubs array
+    //start your XMLHttpRequest
+    var request = new XMLHttpRequest()
+    //get from the URL specified in the constructor
+    request.open('GET',this.url)
+    //once that data has been got, put the data into the pubs array
+    request.onload = function(){
       if(request.status === 200){
-        var jsonString = request.responseText // Our pubs are listed in the responseText for the request. So, 'de-stringify' it to get the javascript object back.
+        //our pubs are listed in the responseText for the request. So, 'de-stringify' it to get the javascript object back.
+        var jsonString = request.responseText
         var pubsInfo = JSON.parse(jsonString)
         this.convertToPubObjects(pubsInfo)
+
         callback(this.pubs)
       }
     }.bind(this)
@@ -28,7 +33,6 @@ PubGetter.prototype = {
       this.pubs.push(pub)
     }.bind(this))
   }
-
 }
 
-module.exports = PubGetter
+module.exports = PubGet
