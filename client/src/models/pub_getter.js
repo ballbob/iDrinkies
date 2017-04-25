@@ -15,7 +15,6 @@ PubGet.prototype = {
     //once that data has been got, put the data into the pubs array
     request.onload = function(){
       if(request.status === 200){
-        console.log('pubGet request status is 200')
         //our pubs are listed in the responseText for the request. So, 'de-stringify' it to get the javascript object back.
         var jsonString = request.responseText
         var pubsInfo = JSON.parse(jsonString)
@@ -28,7 +27,6 @@ PubGet.prototype = {
   },
 
   convertToPubObjects: function(pubsFromAPI){
-    console.log('convertToPubObjects is being called')
     pubsFromAPI.forEach(function(pubInfo){
       var pub = new Pub(pubInfo)
       pub.id = pubInfo._id
