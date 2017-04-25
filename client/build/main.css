@@ -35,10 +35,9 @@ main {
   flex-direction: row;
 }
 
-#map-controls {
-  width: inherit;
-  display: flex;
-  flex-direction: row;
+#map-content {
+  width: 500px;
+  height: 500px;
 }
 
 #map-content {
