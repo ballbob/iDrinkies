@@ -12,14 +12,14 @@ body {
 h1 {
   font-size: 3em;
   margin: 0;
-  text-shadow: 3px 3px 1px #ff3300;
+  text-shadow: 1px 1px 1px #ff3300;
 }
 
 h2 {
   font-size: 2em;
   margin: auto;
   font-family: 'Love Ya Like A Sister', cursive;
-  text-shadow: 3px 3px 1px #ff3300;
+  text-shadow: 1px 1px 1px #ff3300;
   text-align: center;
 }
 
@@ -64,8 +64,8 @@ article {
   height: 320px;
   overflow: scroll;
   background-color: rgba(255, 204, 153, 0.5);
-  font-size: 1.25em;
-  text-shadow: 2px 2px black;
+  font-size: 1em;
+  text-shadow: 1px 1px black;
 }
 
 #list-content p, img, h4{
@@ -78,16 +78,17 @@ article {
 }
 
 #list-name {
-  font-size: 1.25em;
-  padding: 10.25px;
+  font-size: 1em;
+  height: 30px;
+  line-height: 30px;
   margin: 0;
   background-image: linear-gradient( to right , #ff9933 , #ff6600 );
   text-align: center;
-  text-shadow: 2px 2px black;
+  text-shadow: 1px 1px black;
 }
 
 #list-key {
-  height: 41px;
+  height: 30px;
   width: 320px;
   margin: 0;
   background-image: url("socialmediabutton.png");
@@ -96,34 +97,34 @@ article {
   background-repeat: no-repeat;
   background-color: #ff8000;
   text-align: center;
-  text-shadow: 2px 2px black;
+  text-shadow: 1px 1px black;
 }
 
 #about-box {
-  font-size: 1.25em;
-  padding: 10.25px;
+  font-size: 1em;
+  height: 30px;
   margin: 0;
   background-image: linear-gradient( to right , #ff9933 , #ff6600 );
   text-align: center;
-  text-shadow: 2px 2px black;
+  text-shadow: 1px 1px black;
 }
 
 button {
   width: 320px;
   margin: 0;
-  height: 41px;
+  height: 30px;
   border-width: thick;
   border-radius: 0px;
   border-color: #ff6600;
   background-image: linear-gradient( to right, #ff9933 , #ff6600 );
-  font-size: 1.25em;
+  font-size: 1em;
   color: white;
-  text-shadow: 2px 2px black;
+  text-shadow: 1px 1px black;
 }
 
 input {
   width: 308px;
-  font-size: 1.5em;
+  font-size: 1em;
   border-color: #ff6600;
   border-width: thick;
   text-align: center;
