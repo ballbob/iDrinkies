@@ -9,13 +9,13 @@ body {
 }
 
 h1 {
-  font-size: 8em;
+  font-size: 6em;
   margin: 0;
   text-shadow: 3px 3px 1px #ff3300;
 }
 
 h2 {
-  font-size: 3.25em;
+  font-size: 3em;
   margin: auto;
   font-family: 'Love Ya Like A Sister', cursive;
   text-shadow: 3px 3px 1px #ff3300;
@@ -23,6 +23,7 @@ h2 {
 }
 
 header {
+  padding-top: 30px;
   display: flex;
   flex-direction: row;
   margin: auto;
@@ -118,8 +119,8 @@ input {
 }
 
 #logo {
-  height: 150px;
-  width: 150px;
+  height: 125px;
+  width: 125px;
 }
 
 body .pub-name {
