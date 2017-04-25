@@ -67,14 +67,24 @@ MapWrapper.prototype = {
         marker.addListener('click', function(){
           console.log('dropdown listener activated')
           
-          var div = document.querySelector('#pub-list')
-          var pubDiv = document.createElement('div')
+          // var div = document.querySelector('#pub-list')
+          // var pubDiv = document.createElement('div')
+
+          var allPubDivs = document.querySelectorAll('.pub-div')
+          console.log('all', allPubDivs)
+          var correctDiv 
+          allPubDivs.forEach(function(div){
+            if (div.id === 'pub-entry' + pub.id){
+              correctDiv = div
+            }
+          }.bind(this))
+
+          console.log(correctDiv)
           
-          if (pubDiv.childNodes.length <= 2){
-            console.log('child nodes less than 2')
-            pubLister.dropDownInfo(pub,pubDiv)      
+          if (correctDiv.childNodes.length <= 2){
+            pubLister.dropDownInfo(pub,correctDiv)      
           } else {
-            pubLister.removeDropDownInfo(pubDiv)
+            pubLister.removeDropDownInfo(correctDiv)
           }
         
         })

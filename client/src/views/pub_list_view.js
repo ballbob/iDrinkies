@@ -6,6 +6,8 @@ PubListView.prototype = {
   render: function(pubs){
     for (var i=0; i<pubs.length; i++){
       var pubDiv = document.createElement('div')
+      pubDiv.classList.add('pub-div')
+      pubDiv.id = 'pub-entry' + pubs[i].id
 
       this.createNameParagraph(pubDiv, pubs[i])
       this.listElement.appendChild(pubDiv)
@@ -63,7 +65,6 @@ PubListView.prototype = {
 
   createNameParagraph: function(div, pub){
     var headingDiv = this.getPubHeader(pub)
-    console.log(pub.id.toString())
     
     var pubName = this.getPubNameTitle(pub)
     var dropDownArrow = this.getDropDownArrow(pub)
@@ -83,22 +84,21 @@ PubListView.prototype = {
 
   dropDownInfo: function(pub,div){
     var headingDiv = document.querySelectorAll('.pub-name')
-    console.log(headingDiv)
     var correctHeading
     headingDiv.forEach(function(individualDiv){
       if (individualDiv.id === ('pub' + pub.id)){
         correctHeading = individualDiv
       }
     }.bind(this))
-    console.log('correct heading', correctHeading)
+    console.log('parent', correctHeading.parentElement)
    
-   if (correctHeading.childNodes.length <= 2){
+   if (correctHeading.parentElement.childNodes.length <= 2){
     this.createImgLink(div, pub)
     this.createAddressParagraph(div, pub)
     this.createOpeningHoursList(div, pub)
     this.createReviewList(div, pub)
     
-    correctHeading.appendChild(div)
+    // correctHeading.appendChild(div)
   } else {
     this.removeDropDownInfo(correctHeading)
   }
