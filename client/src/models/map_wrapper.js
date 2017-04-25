@@ -2,6 +2,7 @@ var PubLister = require('../views/pub_list_view.js')
 
 var MapWrapper = function ( container , coords , zoom ) {
 
+  //make your map with the coordinates passed in
   this.googlemap = new google.maps.Map( container , { center: coords , zoom: zoom })
 
   //searchbox - formed on loading. Set out the HTML element for the box
