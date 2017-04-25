@@ -24,7 +24,7 @@ var app = function(){
     mapView.mainMap.pubLocationMarkers(pubs,distanceCalculator,pubLister)
   })
 
-  //get a reference to the 'near me' button
+  //get a reference to the 'near me' button..
 
   var nearMeButton = document.querySelector('#near-me-button')
 
