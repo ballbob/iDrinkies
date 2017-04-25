@@ -135,7 +135,6 @@ PubListView.prototype = {
   //REMOVES ALL OF THE DROP DOWN PUB INFO
   removeDropDownInfo: function(div){
     while (div.childNodes.length > 1){
-      console.log('calling')
       var node = div.childNodes[1]
       div.removeChild(node)
     }
