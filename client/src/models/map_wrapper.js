@@ -1,8 +1,9 @@
 var PubGet = require('./pub_getter.js')
 
 var MapWrapper = function ( container , coords , zoom ) {
+
   this.googlemap = new google.maps.Map( container , { center: coords , zoom: zoom })
-  
+
   //searchbox - formed on loading. Set out the HTML element for the box
   var boxElement = document.querySelector('#search-box')
 
@@ -17,7 +18,7 @@ var MapWrapper = function ( container , coords , zoom ) {
     var selections = this.searchBox.getPlaces()
     this.search(selections, this.centreToResult, this.googlemap)
   }.bind(this))
-  
+
 }
 
 MapWrapper.prototype = {
@@ -44,7 +45,7 @@ MapWrapper.prototype = {
         fillOpacity: 1.0
       }
     });
-    
+
     //get current position
     navigator.geolocation.getCurrentPosition(function ( position ) {
         var currentLocation = {
@@ -53,10 +54,10 @@ MapWrapper.prototype = {
       }
 
       distanceCalculator.calculateDistance(currentLocation, coords, function(distance){
-      
-      //add the info window. First, define what goes inside the info window div  
-        var windowContents = '<div>' + 
-        '<h3>' + pub.name + '</h3>' + 
+
+      //add the info window. First, define what goes inside the info window div
+        var windowContents = '<div>' +
+        '<h3>' + pub.name + '</h3>' +
         '<p>Distance from you: ' + distance + '</p>' +
         '<p>' + pub.address + '</p>' +
         '<img src="' + pub.img + '" width="200">' +

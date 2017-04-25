@@ -9,7 +9,6 @@ MapView.prototype = {
 
   initialize: function () {
     var mapSection = document.getElementById('map-content');
-    google.maps.event.addDomListener(window, 'load', initialize);
     var center = { lat: 0 , lng: 0 }
     this.mainMap = new MapWrapper( mapSection, center, 16 );
     this.mainMap.geolocate();
