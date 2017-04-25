@@ -229,7 +229,7 @@ db.pubs.insert([
   name: "The Strathaven",
   phone: "01357 523817",
   address: "6 Waterside St, Strathaven ML10 6AW",
-  latlng: [55.6820455, -4.0898807],
+  latlng: [55.677181, -4.064795],
   opening_hours: {
     monday: "12pm - 11pm",
     tuesday: "12pm - 11pm",
@@ -324,6 +324,25 @@ db.pubs.insert([
   cc_ranking: 8,
   review: "Nice place for a burger and a pint, also a good vantage point for watching doggos run around the beach",
   img: "/img/espy.jpg"
+},
+
+{
+  name: "The Weavers",
+  phone: "01357 522648",
+  address: "1 Green St, Strathaven ML10 6LT",
+  latlng: [55.677011,-4.066775],
+  opening_hours: {
+    monday: "9am - 1am",
+    tuesday: "9am - 1am",
+    wednesday: "9am - 1am",
+    thursday: "9am - 1am",
+    friday: "9am - 1am",
+    saturday: "9am - 1am",
+    sunday: "9am - 1am"
+  },
+  cc_ranking: 7,
+  review: "The only CAMRA pub in Strathaven! Where all the old folk drink!",
+  img: "/img/theweavers.jpg"
 },
 
 {

@@ -3,19 +3,19 @@ body {
   display: flex;
   flex-direction: column;
   margin: auto;
-  background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 59%, rgba(0, 0, 0, 1) 100%), url('bubbles.png') no-repeat;  background-repeat: repeat;
+  background: radial-gradient( rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 1) 100%), url('bubbles.png') no-repeat;  background-repeat: repeat;
   font-family: sans-serif;
   color: white;
 }
 
 h1 {
-  font-size: 8em;
+  font-size: 6em;
   margin: 0;
   text-shadow: 3px 3px 1px #ff3300;
 }
 
 h2 {
-  font-size: 3.25em;
+  font-size: 3em;
   margin: auto;
   font-family: 'Love Ya Like A Sister', cursive;
   text-shadow: 3px 3px 1px #ff3300;
@@ -23,6 +23,7 @@ h2 {
 }
 
 header {
+  padding-top: 30px;
   display: flex;
   flex-direction: row;
   margin: auto;
@@ -45,6 +46,7 @@ main {
 #map-content {
   width: 500px;
   height: 500px;
+  color: black;
 }
 
 #list-container {
@@ -76,10 +78,14 @@ main {
 }
 
 #list-key {
-  font-size: 1.25em;
-  padding: 10.25px;
+  height: 41px;
+  width: 500px;
   margin: 0;
-  background-image: linear-gradient( to right , #ff9933 , #ff6600 );
+  background-image: url("socialmediabutton.png");
+  background-position: right;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #ff8000;
   text-align: center;
   text-shadow: 2px 2px black;
   border-radius: thick;
@@ -117,8 +123,8 @@ input {
 }
 
 #logo {
-  height: 150px;
-  width: 150px;
+  height: 125px;
+  width: 125px;
 }
 
 body .pub-name {
