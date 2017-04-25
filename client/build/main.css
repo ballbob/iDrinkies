@@ -62,6 +62,10 @@ main {
   text-shadow: 2px 2px black;
 }
 
+#list-content p, img, h4{
+  margin-left: 20px;
+}
+
 #list-title {
   background-color: #ff6600;
   align-content: center;
