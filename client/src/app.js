@@ -14,9 +14,9 @@ var app = function(){
 
 
   //get your data and render it
-  pubGetter.getData(function(pubs){
-    pubLister.render(pubs)
-  })
+  // pubGetter.getData(function(pubs){
+  //   pubLister.render(pubs)
+  // })
 
 
   //get the map and render to screen

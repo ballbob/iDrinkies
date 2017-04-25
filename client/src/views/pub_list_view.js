@@ -83,6 +83,7 @@ PubListView.prototype = {
   },
 
   dropDownInfo: function(pub,div){
+    
     var headingDiv = document.querySelectorAll('.pub-name')
     var correctHeading
     headingDiv.forEach(function(individualDiv){
@@ -90,14 +91,14 @@ PubListView.prototype = {
         correctHeading = individualDiv
       }
     }.bind(this))
-    console.log('parent', correctHeading.parentElement)
+    
    
    if (correctHeading.parentElement.childNodes.length <= 2){
     this.createImgLink(div, pub)
     this.createAddressParagraph(div, pub)
     this.createOpeningHoursList(div, pub)
     this.createReviewList(div, pub)
-    
+    console.log(div)
     // correctHeading.appendChild(div)
   } else {
     this.removeDropDownInfo(correctHeading)
@@ -108,6 +109,7 @@ PubListView.prototype = {
 
   removeDropDownInfo: function(div){
     while (div.childNodes.length > 1){
+      console.log('calling')
       var node = div.childNodes[1]
       div.removeChild(node)
     }
