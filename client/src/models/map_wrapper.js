@@ -80,6 +80,8 @@ MapWrapper.prototype = {
       marker.addListener('click', function(){
         var allPubDivs = document.querySelectorAll('.pub-div')
         var correctDiv
+        
+        //set the div for each pubs
         allPubDivs.forEach(function(div){
           //first check that you've got the right pub
           if (div.id === 'pub-entry' + pub.id){
@@ -87,13 +89,13 @@ MapWrapper.prototype = {
           }
         }.bind(this))
 
-          //then, if the marker is clicked, activate that pub's drop-down
-          if (correctDiv.childNodes.length <= 2){
-            pubLister.dropDownInfo(pub,correctDiv)
-          } else {
-            console.log('collapsing')
-            pubLister.removeDropDownInfo(correctDiv)
-          }
+        //then, if the marker is clicked, activate that pub's drop-down
+        if (correctDiv.childNodes.length <= 2){
+          pubLister.dropDownInfo(pub,correctDiv)
+        } else {
+          console.log('collapsing')
+          pubLister.removeDropDownInfo(correctDiv)
+        }
         })
 
       marker.addListener('click',function(){
