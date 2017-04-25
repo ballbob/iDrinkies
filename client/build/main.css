@@ -78,10 +78,14 @@ main {
 }
 
 #list-key {
-  font-size: 1.25em;
-  padding: 10.25px;
+  height: 41px;
+  width: 500px;
   margin: 0;
-  background-image: linear-gradient( to right , #ff9933 , #ff6600 );
+  background-image: url("socialmediabutton.png");
+  background-position: right;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #ff8000;
   text-align: center;
   text-shadow: 2px 2px black;
   border-radius: thick;
