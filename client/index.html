@@ -7,18 +7,24 @@
   <link rel="stylesheet" href="/main.css">
   <script src="https://maps.googleapis.com/maps/api/js?&key=AIzaSyAMJHPbORbz_vlVN9nNu_wN-jyT02mKnAQ&libraries=places"></script>
   <script src="bundle.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister" rel="stylesheet">
 </head>
 
 <body>
 
   <header>
+
     <img id="logo" src="Logo.png" alt="iDrinkies Logo">
-    <section>
-      <h1 id="page-description">iDrinkies :</h1>
-      <h2 id="page-description">Find your favourite iDrinkies stockist</h2>
+
+    <section id="logo-h1-container">
+      <h1 id="page-description">iDrinkies</h1>
     </section>
+
   </header>
+
+  <section id="h2-container">
+    <h2 id="page-description">Find your favourite iDrinkies stockist</h2>
+  </section>
 
   <div id="main-container">
 
@@ -26,12 +32,12 @@
 
       <div id="map-container">
         <div>
-          <input id="search-box" value="Where would you like to go?"/>
+          <input id="search-box" placeholder="Where would you like to go?"/>
         </div>
         <section id="map-content"></section>
         <div>
           <button id="near-me-button">
-            Find your nearest iDrinkies!
+            Click Here! : And find your nearest iDrinkies!
           </button>
         </div>
       </div>
@@ -40,17 +46,13 @@
 
     <article>
 
-        <p> Name :</p>
+        <section id="list-name"> Name :</section>
         <section id="list-content"></section>
-        <p> Key : </p>
+        <section id="list-key"> Key : </section>
 
     </article>
 
   </div>
-
-  <footer>
-    <section id="about-box"><p> About Us: </p></section>
-  </footer>
 
 </body>
 
