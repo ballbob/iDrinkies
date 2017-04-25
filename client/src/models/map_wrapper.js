@@ -67,6 +67,7 @@ MapWrapper.prototype = {
 
         marker.addListener('click', function(){
           console.log('dropdown listener activated')
+// <<<<<<< HEAD
 
           // var div = document.querySelector('#pub-list')
           // var pubDiv = document.createElement('div')
@@ -84,8 +85,17 @@ MapWrapper.prototype = {
 
           if (correctDiv.childNodes.length <= 2){
             pubLister.dropDownInfo(pub,correctDiv)
+// =======
+          
+//           var div = document.querySelector('#pub-list')
+//           var pubDiv = document.createElement('div')
+          
+//           if (pubDiv.childNodes.length <= 2){
+//             console.log('child nodes less than 2')
+//             pubLister.dropDownInfo(pub,pubDiv)      
+// >>>>>>> parent of faafe46... finally working
           } else {
-            pubLister.removeDropDownInfo(correctDiv)
+            pubLister.removeDropDownInfo(pubDiv)
           }
 
         })
