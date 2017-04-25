@@ -99,3 +99,8 @@ footer {
   width: 1200px;
   text-shadow: 2px 2px 1px black;
 }
+
+body .pub-name {
+  display: flex;
+  flex-direction: column;
+}

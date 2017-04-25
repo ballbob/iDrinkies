@@ -1,4 +1,4 @@
-var PubGet = require('./pub_getter.js')
+var PubLister = require('../views/pub_list_view.js')
 
 var MapWrapper = function ( container , coords , zoom ) {
 
@@ -32,7 +32,7 @@ MapWrapper.prototype = {
     return marker;
   },
 
-  addPubMarker: function (pub, coords, distanceCalculator ) {
+  addPubMarker: function (pub, coords, distanceCalculator, pubLister ) {
     //create the marker
     var marker = new google.maps.Marker({
       position: coords,
@@ -66,6 +66,7 @@ MapWrapper.prototype = {
         var pubInfo = new google.maps.InfoWindow({content: windowContents})
 
         marker.addListener('click', function(){
+<<<<<<< HEAD
           console.log('dropdown listener activated')
 
           // var div = document.querySelector('#pub-list')
@@ -74,12 +75,19 @@ MapWrapper.prototype = {
           var allPubDivs = document.querySelectorAll('.pub-div')
           console.log('all', allPubDivs)
           var correctDiv
+=======
+          
+          var allPubDivs = document.querySelectorAll('.pub-div')
+          console.log('all', allPubDivs)
+          var correctDiv 
+>>>>>>> parent of 0fb0679... Revert "Merge branch 'develop' into feature/css"
           allPubDivs.forEach(function(div){
             if (div.id === 'pub-entry' + pub.id){
               correctDiv = div
             }
           }.bind(this))
 
+<<<<<<< HEAD
           console.log(correctDiv)
 
           if (correctDiv.childNodes.length <= 2){
@@ -88,6 +96,15 @@ MapWrapper.prototype = {
             pubLister.removeDropDownInfo(correctDiv)
           }
 
+=======
+          
+          if (correctDiv.childNodes.length <= 2){
+            pubLister.dropDownInfo(pub,correctDiv)      
+          } else {
+            pubLister.removeDropDownInfo(correctDiv)
+          }
+        
+>>>>>>> parent of 0fb0679... Revert "Merge branch 'develop' into feature/css"
         })
 
         marker.addListener('click',function(){
@@ -126,20 +143,19 @@ MapWrapper.prototype = {
     map.setCenter({lat: latitude, lng: longitude})
   },
 
-  pubLocationMarkers: function(distanceCalculator){
-    pubGetter = new PubGet("http://localhost:3000/api/pubs")
-    pubGetter.getData(function(pubs){
-      for (i=0; i<pubs.length; i++){
-
-        //add the markers. the info window is made with them
-        var pubMarker = this.addPubMarker(
-          pubs[i],
-          {
-            lat: pubs[i].latlng[0],
-            lng: pubs[i].latlng[1],
-          }, distanceCalculator)
-      }
-    }.bind(this))
+  pubLocationMarkers: function(pubs,distanceCalculator,pubLister){
+    for (i=0; i<pubs.length; i++){
+      //add the markers. the info window is made with them
+      var pubMarker = this.addPubMarker(
+        pubs[i],
+        {
+          lat: pubs[i].latlng[0],
+          lng: pubs[i].latlng[1],
+        }, 
+        distanceCalculator,
+        pubLister
+      )
+    }
   }
 
 }
