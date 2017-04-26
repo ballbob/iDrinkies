@@ -362,4 +362,22 @@ db.pubs.insert([
   cc_ranking: 4,
   review: "Nice, but pretty posh",
   img: "/img/skylark.jpg"
+},
+{
+  name: "Rockstone's Office",
+  phone: "233 24 467 6742",
+  address: "Osu Ave Ext, Accra, Ghana",
+  latlng: [5.5745509,-0.1865906],
+  opening_hours: {
+    monday: "6am - 12am",
+    tuesday: "6am - 12am",
+    wednesday: "6am - 12am",
+    thursday: "6am - 12am",
+    friday: "6am - 12am",
+    saturday: "6am - 12am",
+    sunday: "6am - 12am"
+  },
+  cc_ranking: 6,
+  review: "This was literally the third result when I googled 'best bar in Accra'. I'm certain it's amazing - Bob",
+  img: "/img/rokstone.jpg"
 }])
