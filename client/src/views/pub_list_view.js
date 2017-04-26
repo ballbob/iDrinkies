@@ -44,6 +44,8 @@ PubListView.prototype = {
     var headingDiv = document.createElement('div')
     headingDiv.classList.add('pub-name')
     headingDiv.id = 'pub' + pub.id
+    headingDiv.style.flexDirection = 'row'
+    headingDiv.style.margin = '10px'
     return headingDiv
   },
 
