@@ -33,12 +33,6 @@ MapWrapper.prototype = {
 
 //the 'you are here' marker
   addMarker: function (coords) {
-    //delete previous marker
-    if(this.markers[0]){
-    this.markers[0].setMap(null)
-    }
-
-    //create a new 'you are here' marker
     var marker = new google.maps.Marker({
       position: coords,
       map: this.googlemap,
