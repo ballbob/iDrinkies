@@ -379,5 +379,5 @@ db.pubs.insert([
   },
   cc_ranking: 6,
   review: "This was literally the third result when I googled 'best bar in Accra'. I'm certain it's amazing - Bob",
-  img: "/img/rokstone.jpg"
+  img: "/img/rockstone.jpg"
 }])
