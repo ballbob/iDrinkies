@@ -2,6 +2,9 @@ var PubLister = require('../views/pub_list_view.js')
 
 var MapWrapper = function ( container , coords , zoom ) {
 
+  //make your array for current markers
+  this.markers = []
+
   //make your map with the coordinates passed in
   this.googlemap = new google.maps.Map( container , { center: coords , zoom: zoom })
 
@@ -29,16 +32,17 @@ MapWrapper.prototype = {
 //////MARKERS
 
 //the 'you are here' marker
-  addMarker: function (coords ) {
+  addMarker: function (coords) {
     var marker = new google.maps.Marker({
       position: coords,
       map: this.googlemap,
       animation: google.maps.Animation.DROP
     });
+    this.markers.push(marker)
     return marker;
   },
 
-//the 'pub' marker
+//the 'pub' markers
   addPubMarker: function (pub, coords, distanceCalculator, pubLister ) {
     //create the marker
     var marker = new google.maps.Marker({
@@ -134,7 +138,7 @@ MapWrapper.prototype = {
           lng: position.coords.longitude
         };
         this.googlemap.setCenter( crds );
-        this.addMarker(crds );
+        this.addMarker(crds);
       }.bind(this));
     }
   },

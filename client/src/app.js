@@ -29,8 +29,12 @@ var app = function(){
   var nearMeButton = document.querySelector('#near-me-button')
 
   nearMeButton.addEventListener('click', function(){
+    if(mapView.mainMap.markers[0]){
+    mapView.mainMap.markers[0].setMap(null)
+    mapView.mainMap.markers = []
+    }
     mapView.centerNearMe()
-  })
+  }.bind(this))
 
 }
 
