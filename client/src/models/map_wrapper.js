@@ -43,7 +43,7 @@ MapWrapper.prototype = {
   },
 
   //create an empty pub marker to be filled in in the addPubMarker function
-  getMarker: function(coords){
+  getPubMarker: function(coords){
     var marker = new google.maps.Marker({
       position: coords,
       map: this.googlemap,
@@ -62,7 +62,7 @@ MapWrapper.prototype = {
 //the 'pub' markers
   addPubMarker: function (pub, coords, distanceCalculator, pubLister ) {
     //create the marker
-    var marker = this.getMarker(coords)
+    var marker = this.getPubMarker(coords)
 
     //get current position and perform the next few tasks with it, so you have access to the distance value
     navigator.geolocation.getCurrentPosition(function ( position ) {
