@@ -1,6 +1,6 @@
 body {
   width: 100%;
-  min-width: 500px;
+  min-width: 450px;
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -39,7 +39,7 @@ header {
 }
 
 main {
-  width: 500px;
+  width: 450px;
   display: flex;
   flex-direction: row;
   margin: auto;
@@ -50,18 +50,18 @@ article {
 }
 
 #map-content {
-  width: 500px;
-  height: 500px;
+  width: 450px;
+  height: 450px;
   color: black;
 }
 
 #list-container {
-  width: 500px;
+  width: 450px;
 }
 
 #list-content {
-  width: 500px;
-  height: 500px;
+  width: 450px;
+  height: 450px;
   overflow: scroll;
   background-color: rgba(255, 204, 153, 0.5);
   font-size: 1em;
@@ -89,7 +89,7 @@ article {
 
 #list-key {
   height: 30px;
-  width: 500px;
+  width: 450px;
   margin: 0;
   background-image: url("socialmediabutton.png");
   background-position: center;
@@ -110,7 +110,7 @@ article {
 }
 
 button {
-  width: 500px;
+  width: 450px;
   margin: 0;
   height: 30px;
   border-width: thick;
@@ -123,7 +123,7 @@ button {
 }
 
 input {
-  width: 488px;
+  width: 438px;
   font-size: 1em;
   border-color: #ff6600;
   border-width: thick;
