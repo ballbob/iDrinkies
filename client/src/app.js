@@ -29,7 +29,6 @@ var app = function(){
   var nearMeButton = document.querySelector('#near-me-button')
 
   nearMeButton.addEventListener('click', function(){
-    console.log(mapView.mainMap.markers.length)
     if(mapView.mainMap.markers[0]){
     mapView.mainMap.markers[0].setMap(null)
     mapView.mainMap.markers = []
