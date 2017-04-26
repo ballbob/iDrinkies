@@ -102,7 +102,6 @@ MapWrapper.prototype = {
         if (correctDiv.childNodes.length <= 2){
           pubLister.dropDownInfo(pub,correctDiv)
         } else {
-          console.log('collapsing')
           pubLister.removeDropDownInfo(correctDiv)
         }
         })
