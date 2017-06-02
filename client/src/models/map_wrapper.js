@@ -60,12 +60,13 @@ MapWrapper.prototype = {
 
     //get current position and perform the next few tasks with it, so you have access to the distance value
     navigator.geolocation.getCurrentPosition(function ( position ) {
+      //fetch the current location's lattitude and longitude and make an object
       var currentLocation = {
         lat: position.coords.latitude,
         lng: position.coords.longitude
       }
 
-      //make your distance calculator
+      //use your distance calculator to show the distance between the pub marker and the user
       distanceCalculator.calculateDistance(currentLocation, coords, function(distance){
 
       //populate the info window for the pub. First, define what goes inside the info window div
@@ -78,6 +79,8 @@ MapWrapper.prototype = {
 
       //create the pub info window
       var pubInfo = new google.maps.InfoWindow({content: windowContents})
+
+      //now that we have our info window, we need listeners on the marker 
 
       //add the listener for the pub info window's creation to the pub's marker
       marker.addListener('click', function(){
@@ -96,11 +99,11 @@ MapWrapper.prototype = {
         if (correctDiv.childNodes.length <= 2){
           pubLister.dropDownInfo(pub,correctDiv)
         } else {
-          console.log('collapsing')
           pubLister.removeDropDownInfo(correctDiv)
         }
         })
 
+      //make the pub info window load when the marker is clicked
       marker.addListener('click',function(){
         pubInfo.open(this.googlemap, marker)
       })
